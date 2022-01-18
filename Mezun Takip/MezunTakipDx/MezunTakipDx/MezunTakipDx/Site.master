@@ -1,0 +1,70 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="MezunTakipDx.SiteMaster" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mezun Takip Sistemi</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" /> 
+    <link href="~/Content/Site.css" rel="stylesheet" /> 
+
+    <script type="text/javascript" src="/Scripts/jquery-1.12.2.min.js"></script>
+    <script type="text/javascript" src="/Scripts/bootstrap.min.js"></script>
+</head>
+<body>
+    <form runat="server">
+        
+            <nav class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topMenu">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="Default.aspx">Mezun Takip Sistemi</a>
+
+                    </div>
+                    <div class="collapse navbar-collapse" id="topMenu">
+                   
+                        <dx:BootstrapMenu ID="TopMenu" runat="server" ShowPopOutImages="True" ItemAutoWidth="false" ClientInstanceName="topMenu" OnItemClick="TopMenu_ItemClick">
+                            <CssClasses Control="top-menu" Menu="navbar-nav" />
+                            <Items>
+                               
+                                <dx:BootstrapMenuItem Text="Ana Sayfa" Name="Home" NavigateUrl="Pages/Default.aspx">
+                                </dx:BootstrapMenuItem>
+                                <dx:BootstrapMenuItem Text="Duyuru Ekle" Name="DuyuruEkle" NavigateUrl="Pages/DuyuruEkle.aspx">
+                                </dx:BootstrapMenuItem>
+                              
+                                <dx:BootstrapMenuItem Text="Kayýt Ol" Name="Register" NavigateUrl="Pages/Kayit.aspx">
+                                </dx:BootstrapMenuItem>
+                                <dx:BootstrapMenuItem Text="Giriþ Yap" Name="Login" NavigateUrl="Pages/Giris.aspx">
+                                </dx:BootstrapMenuItem>
+                               
+                                <dx:BootstrapMenuItem  Visible="false" Text="" NavigateUrl="Pages/Profil.aspx" Name="Profil" >
+                                </dx:BootstrapMenuItem> 
+                                <dx:BootstrapMenuItem  Visible="false" Text="Oturumu Kapat" Name="Cikis" >
+                                </dx:BootstrapMenuItem>
+                            </Items>
+                        </dx:BootstrapMenu>
+                      
+
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container">
+                <asp:ContentPlaceHolder ID="Content" runat="server">
+                </asp:ContentPlaceHolder>
+            
+                <hr>
+
+                <footer>
+                    <p>&copy; <%: DateTime.Now.Year %> - Dumlupýnar Üniversitesi</p>
+                </footer>
+            </div>
+    </form>
+</body>
+</html>

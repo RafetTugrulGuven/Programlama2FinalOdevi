@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MezunTakipDbModelStoreContainer" CdmEntityContainer="MezunTakipDbEntities">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="MezunTakipDbModel.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bolumlers">
+      <EntityTypeMapping TypeName="MezunTakipDbModel.Bolumlers">
+        <MappingFragment StoreEntitySet="Bolumlers">
+          <ScalarProperty Name="bolum_id" ColumnName="bolum_id" />
+          <ScalarProperty Name="bolum_adi" ColumnName="bolum_adi" />
+          <ScalarProperty Name="bolum_kodu" ColumnName="bolum_kodu" />
+          <ScalarProperty Name="bolum_FakulteId" ColumnName="bolum_FakulteId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CalismaAlanlaris">
+      <EntityTypeMapping TypeName="MezunTakipDbModel.CalismaAlanlaris">
+        <MappingFragment StoreEntitySet="CalismaAlanlaris">
+          <ScalarProperty Name="calismaAlani_id" ColumnName="calismaAlani_id" />
+          <ScalarProperty Name="calismaAlani_adi" ColumnName="calismaAlani_adi" />
+          <ScalarProperty Name="bolum_Id" ColumnName="bolum_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DuyuruBasvurus">
+      <EntityTypeMapping TypeName="MezunTakipDbModel.DuyuruBasvurus">
+        <MappingFragment StoreEntitySet="DuyuruBasvurus">
+          <ScalarProperty Name="duyuruBasvuru_durum" ColumnName="duyuruBasvuru_durum" />
+          <ScalarProperty Name="duyuruBasvuru_id" ColumnName="duyuruBasvuru_id" />
+          <ScalarProperty Name="duyuru_id" ColumnName="duyuru_id" />
+          <ScalarProperty Name="uye_tc" ColumnName="uye_tc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DuyuruKapsamis">
+      <EntityTypeMapping TypeName="MezunTakipDbModel.DuyuruKapsamis">
+        <MappingFragment StoreEntitySet="DuyuruKapsamis">
+          <ScalarProperty Name="duyuruKapsam_id" ColumnName="duyuruKapsam_id" />
+          <ScalarProperty Name="duyuru_id" ColumnName="duyuru_id" />
+          <ScalarProperty Name="calismaAlani_id" ColumnName="calismaAlani_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Duyurulars">
+      <EntityTypeMapping TypeName="MezunTakipDbModel.Duyurulars">
+        <MappingFragment StoreEntitySet="Duyurulars">
+          <ScalarProperty Name="duyuru_id" ColumnName="duyuru_id" />
+          <ScalarProperty Name="duyuru_Basligi" ColumnName="duyuru_Basligi" />
+          <ScalarProperty Name="duyuru_Metin" ColumnName="duyuru_Metin" />
+          <ScalarProperty Name="duyuru_Resim" ColumnName="duyuru_Resim" />
+          <ScalarProperty Name="duyuru_yayinTarihi" ColumnName="duyuru_yayinTarihi" />
+          <ScalarProperty Name="duyuru_bitisTarihi" ColumnName="duyuru_bitisTarihi" />
+          <ScalarProperty Name="duyuru_sahibiTc" ColumnName="duyuru_sahibiTc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fakultelers">
+      <EntityTypeMapping TypeName="MezunTakipDbModel.Fakultelers">
+        <MappingFragment StoreEntitySet="Fakultelers">
+          <ScalarProperty Name="fakulte_id" ColumnName="fakulte_id" />
+          <ScalarProperty Name="fakulte_adi" ColumnName="fakulte_adi" />
+          <ScalarProperty Name="fakulte_kodu" ColumnName="fakulte_kodu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ilcelers">
+      <EntityTypeMapping TypeName="MezunTakipDbModel.Ilcelers">
+        <MappingFragment StoreEntitySet="Ilcelers">
+          <ScalarProperty Name="ilce_id" ColumnName="ilce_id" />
+          <ScalarProperty Name="ilce_adi" ColumnName="ilce_adi" />
+          <ScalarProperty Name="ilce_SehirId" ColumnName="ilce_SehirId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OgrenimDurumlaris">
+      <EntityTypeMapping TypeName="MezunTakipDbModel.OgrenimDurumlaris">
+        <MappingFragment StoreEntitySet="OgrenimDurumlaris">
+          <ScalarProperty Name="ogrenimD_id" ColumnName="ogrenimD_id" />
+          <ScalarProperty Name="ogrenimD_tanim" ColumnName="ogrenimD_tanim" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sehirlers">
+      <EntityTypeMapping TypeName="MezunTakipDbModel.Sehirlers">
+        <MappingFragment StoreEntitySet="Sehirlers">
+          <ScalarProperty Name="sehir_id" ColumnName="sehir_id" />
+          <ScalarProperty Name="sehir_adi" ColumnName="sehir_adi" />
+          <ScalarProperty Name="sehir_kodu" ColumnName="sehir_kodu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SirketAdres">
+      <EntityTypeMapping TypeName="MezunTakipDbModel.SirketAdres">
+        <MappingFragment StoreEntitySet="SirketAdres">
+          <ScalarProperty Name="sirketAdres_id" ColumnName="sirketAdres_id" />
+          <ScalarProperty Name="sirket_adres" ColumnName="sirket_adres" />
+          <ScalarProperty Name="sirket_Id" ColumnName="sirket_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sirketlers">
+      <EntityTypeMapping TypeName="MezunTakipDbModel.Sirketlers">
+        <MappingFragment StoreEntitySet="Sirketlers">
+          <ScalarProperty Name="sirket_id" ColumnName="sirket_id" />
+          <ScalarProperty Name="sirket_adi" ColumnName="sirket_adi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SirketTels">
+      <EntityTypeMapping TypeName="MezunTakipDbModel.SirketTels">
+        <MappingFragment StoreEntitySet="SirketTels">
+          <ScalarProperty Name="sirketTel_id" ColumnName="sirketTel_id" />
+          <ScalarProperty Name="sirket_tel" ColumnName="sirket_tel" />
+          <ScalarProperty Name="sirket_Id" ColumnName="sirket_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SirketWebs">
+      <EntityTypeMapping TypeName="MezunTakipDbModel.SirketWebs">
+        <MappingFragment StoreEntitySet="SirketWebs">
+          <ScalarProperty Name="sirketWeb_id" ColumnName="sirketWeb_id" />
+          <ScalarProperty Name="sirket_web" ColumnName="sirket_web" />
+          <ScalarProperty Name="sirket_Id" ColumnName="sirket_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UyeAdres">
+      <EntityTypeMapping TypeName="MezunTakipDbModel.UyeAdres">
+        <MappingFragment StoreEntitySet="UyeAdres">
+          <ScalarProperty Name="uyeAdres_id" ColumnName="uyeAdres_id" />
+          <ScalarProperty Name="uye_adres" ColumnName="uye_adres" />
+          <ScalarProperty Name="uye_tc" ColumnName="uye_tc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UyeBolums">
+      <EntityTypeMapping TypeName="MezunTakipDbModel.UyeBolums">
+        <MappingFragment StoreEntitySet="UyeBolums">
+          <ScalarProperty Name="uyeBolum_id" ColumnName="uyeBolum_id" />
+          <ScalarProperty Name="bolum_id" ColumnName="bolum_id" />
+          <ScalarProperty Name="uye_tc" ColumnName="uye_tc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UyeCalismaAlanis">
+      <EntityTypeMapping TypeName="MezunTakipDbModel.UyeCalismaAlanis">
+        <MappingFragment StoreEntitySet="UyeCalismaAlanis">
+          <ScalarProperty Name="uyeCalismaAlani_id" ColumnName="uyeCalismaAlani_id" />
+          <ScalarProperty Name="calismaAlani_id" ColumnName="calismaAlani_id" />
+          <ScalarProperty Name="uye_tc" ColumnName="uye_tc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Uyelers">
+      <EntityTypeMapping TypeName="MezunTakipDbModel.Uyelers">
+        <MappingFragment StoreEntitySet="Uyelers">
+          <ScalarProperty Name="uye_tc" ColumnName="uye_tc" />
+          <ScalarProperty Name="uye_id" ColumnName="uye_id" />
+          <ScalarProperty Name="uye_ad" ColumnName="uye_ad" />
+          <ScalarProperty Name="uye_soyad" ColumnName="uye_soyad" />
+          <ScalarProperty Name="uye_sifre" ColumnName="uye_sifre" />
+          <ScalarProperty Name="uye_dogumTarihi" ColumnName="uye_dogumTarihi" />
+          <ScalarProperty Name="uye_cinsiyet" ColumnName="uye_cinsiyet" />
+          <ScalarProperty Name="uye_askerlikDurumu" ColumnName="uye_askerlikDurumu" />
+          <ScalarProperty Name="uye_foto" ColumnName="uye_foto" />
+          <ScalarProperty Name="uye_dogumYeri_id" ColumnName="uye_dogumYeri_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UyeMails">
+      <EntityTypeMapping TypeName="MezunTakipDbModel.UyeMails">
+        <MappingFragment StoreEntitySet="UyeMails">
+          <ScalarProperty Name="uyeMail_id" ColumnName="uyeMail_id" />
+          <ScalarProperty Name="uyeMail_adres" ColumnName="uyeMail_adres" />
+          <ScalarProperty Name="uye_tc" ColumnName="uye_tc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UyeOgrenimDurumus">
+      <EntityTypeMapping TypeName="MezunTakipDbModel.UyeOgrenimDurumus">
+        <MappingFragment StoreEntitySet="UyeOgrenimDurumus">
+          <ScalarProperty Name="uyeOgrenimD_id" ColumnName="uyeOgrenimD_id" />
+          <ScalarProperty Name="ogrenimD_durum" ColumnName="ogrenimD_durum" />
+          <ScalarProperty Name="ogrenimD_id" ColumnName="ogrenimD_id" />
+          <ScalarProperty Name="uye_tc" ColumnName="uye_tc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UyeSirkets">
+      <EntityTypeMapping TypeName="MezunTakipDbModel.UyeSirkets">
+        <MappingFragment StoreEntitySet="UyeSirkets">
+          <ScalarProperty Name="uyeSirket_id" ColumnName="uyeSirket_id" />
+          <ScalarProperty Name="uyeSirket_durum" ColumnName="uyeSirket_durum" />
+          <ScalarProperty Name="sirket_id" ColumnName="sirket_id" />
+          <ScalarProperty Name="uye_tc" ColumnName="uye_tc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UyeTels">
+      <EntityTypeMapping TypeName="MezunTakipDbModel.UyeTels">
+        <MappingFragment StoreEntitySet="UyeTels">
+          <ScalarProperty Name="uyeTel_id" ColumnName="uyeTel_id" />
+          <ScalarProperty Name="uye_tel" ColumnName="uye_tel" />
+          <ScalarProperty Name="uye_tc" ColumnName="uye_tc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UyeBolumView">
+      <EntityTypeMapping TypeName="MezunTakipDbModel.UyeBolumView">
+        <MappingFragment StoreEntitySet="UyeBolumView">
+          <ScalarProperty Name="uye_tc" ColumnName="uye_tc" />
+          <ScalarProperty Name="fakulte_adi" ColumnName="fakulte_adi" />
+          <ScalarProperty Name="bolum_adi" ColumnName="bolum_adi" />
+          <ScalarProperty Name="uyeBolum_id" ColumnName="uyeBolum_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UyeCalismaAlaniView">
+      <EntityTypeMapping TypeName="MezunTakipDbModel.UyeCalismaAlaniView">
+        <MappingFragment StoreEntitySet="UyeCalismaAlaniView">
+          <ScalarProperty Name="uye_tc" ColumnName="uye_tc" />
+          <ScalarProperty Name="fakulte_adi" ColumnName="fakulte_adi" />
+          <ScalarProperty Name="bolum_adi" ColumnName="bolum_adi" />
+          <ScalarProperty Name="calismaAlani_adi" ColumnName="calismaAlani_adi" />
+          <ScalarProperty Name="uyeCalismaAlani_id" ColumnName="uyeCalismaAlani_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UyeSirketView">
+      <EntityTypeMapping TypeName="MezunTakipDbModel.UyeSirketView">
+        <MappingFragment StoreEntitySet="UyeSirketView">
+          <ScalarProperty Name="uye_tc" ColumnName="uye_tc" />
+          <ScalarProperty Name="sirket_web" ColumnName="sirket_web" />
+          <ScalarProperty Name="sirket_tel" ColumnName="sirket_tel" />
+          <ScalarProperty Name="sirket_adres" ColumnName="sirket_adres" />
+          <ScalarProperty Name="sirket_adi" ColumnName="sirket_adi" />
+          <ScalarProperty Name="uyeSirket_durum" ColumnName="uyeSirket_durum" />
+          <ScalarProperty Name="uyeSirket_id" ColumnName="uyeSirket_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DuyurularView">
+      <EntityTypeMapping TypeName="MezunTakipDbModel.DuyurularView">
+        <MappingFragment StoreEntitySet="DuyurularView">
+          <ScalarProperty Name="duyuru_id" ColumnName="duyuru_id" />
+          <ScalarProperty Name="duyuru_sahibiAdSoyad" ColumnName="duyuru_sahibiAdSoyad" />
+          <ScalarProperty Name="duyuru_sahibiTc" ColumnName="duyuru_sahibiTc" />
+          <ScalarProperty Name="duyuru_bitisTarihi" ColumnName="duyuru_bitisTarihi" />
+          <ScalarProperty Name="duyuru_yayinTarihi" ColumnName="duyuru_yayinTarihi" />
+          <ScalarProperty Name="duyuru_Resim" ColumnName="duyuru_Resim" />
+          <ScalarProperty Name="duyuru_Metin" ColumnName="duyuru_Metin" />
+          <ScalarProperty Name="duyuru_Basligi" ColumnName="duyuru_Basligi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DuyuruBasvuruView">
+      <EntityTypeMapping TypeName="MezunTakipDbModel.DuyuruBasvuruView">
+        <MappingFragment StoreEntitySet="DuyuruBasvuruView">
+          <ScalarProperty Name="uye_AdSoyad" ColumnName="uye_AdSoyad" />
+          <ScalarProperty Name="uye_tc" ColumnName="uye_tc" />
+          <ScalarProperty Name="duyuru_id" ColumnName="duyuru_id" />
+          <ScalarProperty Name="duyuruBasvuru_id" ColumnName="duyuruBasvuru_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DuyuruKapsamView">
+      <EntityTypeMapping TypeName="MezunTakipDbModel.DuyuruKapsamView">
+        <MappingFragment StoreEntitySet="DuyuruKapsamView">
+          <ScalarProperty Name="fakulte_adi" ColumnName="fakulte_adi" />
+          <ScalarProperty Name="bolum_adi" ColumnName="bolum_adi" />
+          <ScalarProperty Name="calismaAlani_adi" ColumnName="calismaAlani_adi" />
+          <ScalarProperty Name="calismaAlani_id" ColumnName="calismaAlani_id" />
+          <ScalarProperty Name="duyuru_id" ColumnName="duyuru_id" />
+          <ScalarProperty Name="duyuruKapsam_id" ColumnName="duyuruKapsam_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

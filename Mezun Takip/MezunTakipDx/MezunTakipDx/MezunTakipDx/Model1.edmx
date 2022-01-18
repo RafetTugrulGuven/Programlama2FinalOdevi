@@ -1,0 +1,1805 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MezunTakipDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Bolumlers">
+          <Key>
+            <PropertyRef Name="bolum_id" />
+          </Key>
+          <Property Name="bolum_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="bolum_adi" Type="varchar" MaxLength="8000" Nullable="false" />
+          <Property Name="bolum_kodu" Type="int" Nullable="false" />
+          <Property Name="bolum_FakulteId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CalismaAlanlaris">
+          <Key>
+            <PropertyRef Name="calismaAlani_id" />
+          </Key>
+          <Property Name="calismaAlani_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="calismaAlani_adi" Type="varchar" MaxLength="8000" Nullable="false" />
+          <Property Name="bolum_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DuyuruBasvurus">
+          <Key>
+            <PropertyRef Name="duyuruBasvuru_id" />
+          </Key>
+          <Property Name="duyuruBasvuru_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="duyuru_id" Type="int" Nullable="false" />
+          <Property Name="uye_tc" Type="varchar" MaxLength="128" />
+          <Property Name="duyuruBasvuru_durum" Type="int" />
+        </EntityType>
+        <EntityType Name="DuyuruKapsamis">
+          <Key>
+            <PropertyRef Name="duyuruKapsam_id" />
+          </Key>
+          <Property Name="duyuruKapsam_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="duyuru_id" Type="int" Nullable="false" />
+          <Property Name="calismaAlani_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Duyurulars">
+          <Key>
+            <PropertyRef Name="duyuru_id" />
+          </Key>
+          <Property Name="duyuru_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="duyuru_Basligi" Type="varchar" MaxLength="8000" Nullable="false" />
+          <Property Name="duyuru_Metin" Type="varchar" MaxLength="8000" Nullable="false" />
+          <Property Name="duyuru_Resim" Type="image" />
+          <Property Name="duyuru_yayinTarihi" Type="datetime" />
+          <Property Name="duyuru_bitisTarihi" Type="datetime" />
+          <Property Name="duyuru_sahibiTc" Type="varchar" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="Fakultelers">
+          <Key>
+            <PropertyRef Name="fakulte_id" />
+          </Key>
+          <Property Name="fakulte_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fakulte_adi" Type="varchar" MaxLength="8000" Nullable="false" />
+          <Property Name="fakulte_kodu" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ilcelers">
+          <Key>
+            <PropertyRef Name="ilce_id" />
+          </Key>
+          <Property Name="ilce_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ilce_adi" Type="varchar" MaxLength="8000" Nullable="false" />
+          <Property Name="ilce_SehirId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OgrenimDurumlaris">
+          <Key>
+            <PropertyRef Name="ogrenimD_id" />
+          </Key>
+          <Property Name="ogrenimD_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ogrenimD_tanim" Type="varchar" MaxLength="8000" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sehirlers">
+          <Key>
+            <PropertyRef Name="sehir_id" />
+          </Key>
+          <Property Name="sehir_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sehir_adi" Type="varchar" MaxLength="8000" Nullable="false" />
+          <Property Name="sehir_kodu" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SirketAdres">
+          <Key>
+            <PropertyRef Name="sirketAdres_id" />
+          </Key>
+          <Property Name="sirketAdres_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sirket_adres" Type="varchar" MaxLength="8000" Nullable="false" />
+          <Property Name="sirket_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sirketlers">
+          <Key>
+            <PropertyRef Name="sirket_id" />
+          </Key>
+          <Property Name="sirket_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sirket_adi" Type="varchar" MaxLength="8000" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SirketTels">
+          <Key>
+            <PropertyRef Name="sirketTel_id" />
+          </Key>
+          <Property Name="sirketTel_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sirket_tel" Type="varchar" MaxLength="8000" Nullable="false" />
+          <Property Name="sirket_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SirketWebs">
+          <Key>
+            <PropertyRef Name="sirketWeb_id" />
+          </Key>
+          <Property Name="sirketWeb_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sirket_web" Type="varchar" MaxLength="8000" Nullable="false" />
+          <Property Name="sirket_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UyeAdres">
+          <Key>
+            <PropertyRef Name="uyeAdres_id" />
+          </Key>
+          <Property Name="uyeAdres_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="uye_adres" Type="varchar" MaxLength="8000" Nullable="false" />
+          <Property Name="uye_tc" Type="varchar" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="UyeBolums">
+          <Key>
+            <PropertyRef Name="uyeBolum_id" />
+          </Key>
+          <Property Name="uyeBolum_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="bolum_id" Type="int" Nullable="false" />
+          <Property Name="uye_tc" Type="varchar" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="UyeCalismaAlanis">
+          <Key>
+            <PropertyRef Name="uyeCalismaAlani_id" />
+          </Key>
+          <Property Name="uyeCalismaAlani_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="calismaAlani_id" Type="int" Nullable="false" />
+          <Property Name="uye_tc" Type="varchar" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="Uyelers">
+          <Key>
+            <PropertyRef Name="uye_tc" />
+          </Key>
+          <Property Name="uye_tc" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="uye_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="uye_ad" Type="varchar" MaxLength="8000" Nullable="false" />
+          <Property Name="uye_soyad" Type="varchar" MaxLength="8000" />
+          <Property Name="uye_sifre" Type="varchar" MaxLength="8000" />
+          <Property Name="uye_dogumTarihi" Type="datetime" />
+          <Property Name="uye_cinsiyet" Type="int" Nullable="false" />
+          <Property Name="uye_askerlikDurumu" Type="int" />
+          <Property Name="uye_foto" Type="image" />
+          <Property Name="uye_dogumYeri_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UyeMails">
+          <Key>
+            <PropertyRef Name="uyeMail_id" />
+          </Key>
+          <Property Name="uyeMail_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="uyeMail_adres" Type="varchar" MaxLength="8000" Nullable="false" />
+          <Property Name="uye_tc" Type="varchar" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="UyeOgrenimDurumus">
+          <Key>
+            <PropertyRef Name="uyeOgrenimD_id" />
+          </Key>
+          <Property Name="uyeOgrenimD_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ogrenimD_durum" Type="int" Nullable="false" />
+          <Property Name="ogrenimD_id" Type="int" Nullable="false" />
+          <Property Name="uye_tc" Type="varchar" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="UyeSirkets">
+          <Key>
+            <PropertyRef Name="uyeSirket_id" />
+          </Key>
+          <Property Name="uyeSirket_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="uyeSirket_durum" Type="int" Nullable="false" />
+          <Property Name="sirket_id" Type="int" Nullable="false" />
+          <Property Name="uye_tc" Type="varchar" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="UyeTels">
+          <Key>
+            <PropertyRef Name="uyeTel_id" />
+          </Key>
+          <Property Name="uyeTel_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="uye_tel" Type="varchar" MaxLength="8000" Nullable="false" />
+          <Property Name="uye_tc" Type="varchar" MaxLength="128" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'MezunTakipDb.dbo.DuyuruBasvuruView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="DuyuruBasvuruView">
+          <Key>
+            <PropertyRef Name="duyuruBasvuru_id" />
+            <PropertyRef Name="duyuru_id" />
+          </Key>
+          <Property Name="duyuruBasvuru_id" Type="int" Nullable="false" />
+          <Property Name="duyuru_id" Type="int" Nullable="false" />
+          <Property Name="uye_tc" Type="varchar" MaxLength="128" />
+          <Property Name="uye_AdSoyad" Type="varchar" MaxLength="8000" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'MezunTakipDb.dbo.DuyuruKapsamView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="DuyuruKapsamView">
+          <Key>
+            <PropertyRef Name="duyuruKapsam_id" />
+            <PropertyRef Name="duyuru_id" />
+            <PropertyRef Name="calismaAlani_id" />
+          </Key>
+          <Property Name="duyuruKapsam_id" Type="int" Nullable="false" />
+          <Property Name="duyuru_id" Type="int" Nullable="false" />
+          <Property Name="calismaAlani_id" Type="int" Nullable="false" />
+          <Property Name="calismaAlani_adi" Type="varchar" MaxLength="8000" />
+          <Property Name="bolum_adi" Type="varchar" MaxLength="8000" />
+          <Property Name="fakulte_adi" Type="varchar" MaxLength="8000" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'MezunTakipDb.dbo.DuyurularView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="DuyurularView">
+          <Key>
+            <PropertyRef Name="duyuru_id" />
+            <PropertyRef Name="duyuru_Basligi" />
+            <PropertyRef Name="duyuru_Metin" />
+          </Key>
+          <Property Name="duyuru_id" Type="int" Nullable="false" />
+          <Property Name="duyuru_Basligi" Type="varchar" MaxLength="8000" Nullable="false" />
+          <Property Name="duyuru_Metin" Type="varchar" MaxLength="8000" Nullable="false" />
+          <Property Name="duyuru_Resim" Type="image" />
+          <Property Name="duyuru_yayinTarihi" Type="datetime" />
+          <Property Name="duyuru_bitisTarihi" Type="datetime" />
+          <Property Name="duyuru_sahibiTc" Type="varchar" MaxLength="128" />
+          <Property Name="duyuru_sahibiAdSoyad" Type="varchar" MaxLength="8000" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'MezunTakipDb.dbo.UyeBolumView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="UyeBolumView">
+          <Key>
+            <PropertyRef Name="uyeBolum_id" />
+          </Key>
+          <Property Name="uye_tc" Type="varchar" MaxLength="128" />
+          <Property Name="uyeBolum_id" Type="int" Nullable="false" />
+          <Property Name="bolum_adi" Type="varchar" MaxLength="8000" />
+          <Property Name="fakulte_adi" Type="varchar" MaxLength="8000" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'MezunTakipDb.dbo.UyeCalismaAlaniView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="UyeCalismaAlaniView">
+          <Key>
+            <PropertyRef Name="uyeCalismaAlani_id" />
+          </Key>
+          <Property Name="uye_tc" Type="varchar" MaxLength="128" />
+          <Property Name="uyeCalismaAlani_id" Type="int" Nullable="false" />
+          <Property Name="calismaAlani_adi" Type="varchar" MaxLength="8000" />
+          <Property Name="bolum_adi" Type="varchar" MaxLength="8000" />
+          <Property Name="fakulte_adi" Type="varchar" MaxLength="8000" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'MezunTakipDb.dbo.UyeSirketView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="UyeSirketView">
+          <Key>
+            <PropertyRef Name="uyeSirket_id" />
+          </Key>
+          <Property Name="uye_tc" Type="varchar" MaxLength="128" />
+          <Property Name="uyeSirket_id" Type="int" Nullable="false" />
+          <Property Name="uyeSirket_durum" Type="varchar" MaxLength="16" />
+          <Property Name="sirket_adi" Type="varchar" MaxLength="8000" />
+          <Property Name="sirket_adres" Type="varchar" MaxLength="8000" />
+          <Property Name="sirket_tel" Type="varchar" MaxLength="8000" />
+          <Property Name="sirket_web" Type="varchar" MaxLength="8000" />
+        </EntityType>
+        <Association Name="FK_dbo_Bolumlers_dbo_Fakultelers_bolum_FakulteId">
+          <End Role="Fakultelers" Type="Self.Fakultelers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Bolumlers" Type="Self.Bolumlers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fakultelers">
+              <PropertyRef Name="fakulte_id" />
+            </Principal>
+            <Dependent Role="Bolumlers">
+              <PropertyRef Name="bolum_FakulteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_CalismaAlanlaris_dbo_Bolumlers_bolum_Id">
+          <End Role="Bolumlers" Type="Self.Bolumlers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CalismaAlanlaris" Type="Self.CalismaAlanlaris" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bolumlers">
+              <PropertyRef Name="bolum_id" />
+            </Principal>
+            <Dependent Role="CalismaAlanlaris">
+              <PropertyRef Name="bolum_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_DuyuruBasvurus_dbo_Duyurulars_duyuru_id">
+          <End Role="Duyurulars" Type="Self.Duyurulars" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="DuyuruBasvurus" Type="Self.DuyuruBasvurus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Duyurulars">
+              <PropertyRef Name="duyuru_id" />
+            </Principal>
+            <Dependent Role="DuyuruBasvurus">
+              <PropertyRef Name="duyuru_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_DuyuruBasvurus_dbo_Uyelers_uye_tc">
+          <End Role="Uyelers" Type="Self.Uyelers" Multiplicity="0..1" />
+          <End Role="DuyuruBasvurus" Type="Self.DuyuruBasvurus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uyelers">
+              <PropertyRef Name="uye_tc" />
+            </Principal>
+            <Dependent Role="DuyuruBasvurus">
+              <PropertyRef Name="uye_tc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_DuyuruKapsamis_dbo_CalismaAlanlaris_calismaAlani_id">
+          <End Role="CalismaAlanlaris" Type="Self.CalismaAlanlaris" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="DuyuruKapsamis" Type="Self.DuyuruKapsamis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CalismaAlanlaris">
+              <PropertyRef Name="calismaAlani_id" />
+            </Principal>
+            <Dependent Role="DuyuruKapsamis">
+              <PropertyRef Name="calismaAlani_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_DuyuruKapsamis_dbo_Duyurulars_duyuru_id">
+          <End Role="Duyurulars" Type="Self.Duyurulars" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="DuyuruKapsamis" Type="Self.DuyuruKapsamis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Duyurulars">
+              <PropertyRef Name="duyuru_id" />
+            </Principal>
+            <Dependent Role="DuyuruKapsamis">
+              <PropertyRef Name="duyuru_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Duyurulars_dbo_Uyelers_duyuru_sahibiTc">
+          <End Role="Uyelers" Type="Self.Uyelers" Multiplicity="0..1" />
+          <End Role="Duyurulars" Type="Self.Duyurulars" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uyelers">
+              <PropertyRef Name="uye_tc" />
+            </Principal>
+            <Dependent Role="Duyurulars">
+              <PropertyRef Name="duyuru_sahibiTc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Ilcelers_dbo_Sehirlers_ilce_SehirId">
+          <End Role="Sehirlers" Type="Self.Sehirlers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Ilcelers" Type="Self.Ilcelers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sehirlers">
+              <PropertyRef Name="sehir_id" />
+            </Principal>
+            <Dependent Role="Ilcelers">
+              <PropertyRef Name="ilce_SehirId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_SirketAdres_dbo_Sirketlers_sirket_Id">
+          <End Role="Sirketlers" Type="Self.Sirketlers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="SirketAdres" Type="Self.SirketAdres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sirketlers">
+              <PropertyRef Name="sirket_id" />
+            </Principal>
+            <Dependent Role="SirketAdres">
+              <PropertyRef Name="sirket_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_SirketTels_dbo_Sirketlers_sirket_Id">
+          <End Role="Sirketlers" Type="Self.Sirketlers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="SirketTels" Type="Self.SirketTels" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sirketlers">
+              <PropertyRef Name="sirket_id" />
+            </Principal>
+            <Dependent Role="SirketTels">
+              <PropertyRef Name="sirket_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_SirketWebs_dbo_Sirketlers_sirket_Id">
+          <End Role="Sirketlers" Type="Self.Sirketlers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="SirketWebs" Type="Self.SirketWebs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sirketlers">
+              <PropertyRef Name="sirket_id" />
+            </Principal>
+            <Dependent Role="SirketWebs">
+              <PropertyRef Name="sirket_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UyeAdres_dbo_Uyelers_uye_tc">
+          <End Role="Uyelers" Type="Self.Uyelers" Multiplicity="0..1" />
+          <End Role="UyeAdres" Type="Self.UyeAdres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uyelers">
+              <PropertyRef Name="uye_tc" />
+            </Principal>
+            <Dependent Role="UyeAdres">
+              <PropertyRef Name="uye_tc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UyeBolums_dbo_Bolumlers_bolum_id">
+          <End Role="Bolumlers" Type="Self.Bolumlers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UyeBolums" Type="Self.UyeBolums" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bolumlers">
+              <PropertyRef Name="bolum_id" />
+            </Principal>
+            <Dependent Role="UyeBolums">
+              <PropertyRef Name="bolum_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UyeBolums_dbo_Uyelers_uye_tc">
+          <End Role="Uyelers" Type="Self.Uyelers" Multiplicity="0..1" />
+          <End Role="UyeBolums" Type="Self.UyeBolums" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uyelers">
+              <PropertyRef Name="uye_tc" />
+            </Principal>
+            <Dependent Role="UyeBolums">
+              <PropertyRef Name="uye_tc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UyeCalismaAlanis_dbo_CalismaAlanlaris_calismaAlani_id">
+          <End Role="CalismaAlanlaris" Type="Self.CalismaAlanlaris" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UyeCalismaAlanis" Type="Self.UyeCalismaAlanis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CalismaAlanlaris">
+              <PropertyRef Name="calismaAlani_id" />
+            </Principal>
+            <Dependent Role="UyeCalismaAlanis">
+              <PropertyRef Name="calismaAlani_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UyeCalismaAlanis_dbo_Uyelers_uye_tc">
+          <End Role="Uyelers" Type="Self.Uyelers" Multiplicity="0..1" />
+          <End Role="UyeCalismaAlanis" Type="Self.UyeCalismaAlanis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uyelers">
+              <PropertyRef Name="uye_tc" />
+            </Principal>
+            <Dependent Role="UyeCalismaAlanis">
+              <PropertyRef Name="uye_tc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Uyelers_dbo_Ilcelers_uye_dogumYeri_id">
+          <End Role="Ilcelers" Type="Self.Ilcelers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Uyelers" Type="Self.Uyelers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ilcelers">
+              <PropertyRef Name="ilce_id" />
+            </Principal>
+            <Dependent Role="Uyelers">
+              <PropertyRef Name="uye_dogumYeri_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UyeMails_dbo_Uyelers_uye_tc">
+          <End Role="Uyelers" Type="Self.Uyelers" Multiplicity="0..1" />
+          <End Role="UyeMails" Type="Self.UyeMails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uyelers">
+              <PropertyRef Name="uye_tc" />
+            </Principal>
+            <Dependent Role="UyeMails">
+              <PropertyRef Name="uye_tc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UyeOgrenimDurumus_dbo_OgrenimDurumlaris_ogrenimD_id">
+          <End Role="OgrenimDurumlaris" Type="Self.OgrenimDurumlaris" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UyeOgrenimDurumus" Type="Self.UyeOgrenimDurumus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OgrenimDurumlaris">
+              <PropertyRef Name="ogrenimD_id" />
+            </Principal>
+            <Dependent Role="UyeOgrenimDurumus">
+              <PropertyRef Name="ogrenimD_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UyeOgrenimDurumus_dbo_Uyelers_uye_tc">
+          <End Role="Uyelers" Type="Self.Uyelers" Multiplicity="0..1" />
+          <End Role="UyeOgrenimDurumus" Type="Self.UyeOgrenimDurumus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uyelers">
+              <PropertyRef Name="uye_tc" />
+            </Principal>
+            <Dependent Role="UyeOgrenimDurumus">
+              <PropertyRef Name="uye_tc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UyeSirkets_dbo_Sirketlers_sirket_id">
+          <End Role="Sirketlers" Type="Self.Sirketlers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UyeSirkets" Type="Self.UyeSirkets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sirketlers">
+              <PropertyRef Name="sirket_id" />
+            </Principal>
+            <Dependent Role="UyeSirkets">
+              <PropertyRef Name="sirket_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UyeSirkets_dbo_Uyelers_uye_tc">
+          <End Role="Uyelers" Type="Self.Uyelers" Multiplicity="0..1" />
+          <End Role="UyeSirkets" Type="Self.UyeSirkets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uyelers">
+              <PropertyRef Name="uye_tc" />
+            </Principal>
+            <Dependent Role="UyeSirkets">
+              <PropertyRef Name="uye_tc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UyeTels_dbo_Uyelers_uye_tc">
+          <End Role="Uyelers" Type="Self.Uyelers" Multiplicity="0..1" />
+          <End Role="UyeTels" Type="Self.UyeTels" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uyelers">
+              <PropertyRef Name="uye_tc" />
+            </Principal>
+            <Dependent Role="UyeTels">
+              <PropertyRef Name="uye_tc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MezunTakipDbModelStoreContainer">
+          <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bolumlers" EntityType="Self.Bolumlers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CalismaAlanlaris" EntityType="Self.CalismaAlanlaris" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DuyuruBasvurus" EntityType="Self.DuyuruBasvurus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DuyuruKapsamis" EntityType="Self.DuyuruKapsamis" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Duyurulars" EntityType="Self.Duyurulars" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fakultelers" EntityType="Self.Fakultelers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ilcelers" EntityType="Self.Ilcelers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OgrenimDurumlaris" EntityType="Self.OgrenimDurumlaris" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sehirlers" EntityType="Self.Sehirlers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SirketAdres" EntityType="Self.SirketAdres" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sirketlers" EntityType="Self.Sirketlers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SirketTels" EntityType="Self.SirketTels" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SirketWebs" EntityType="Self.SirketWebs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UyeAdres" EntityType="Self.UyeAdres" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UyeBolums" EntityType="Self.UyeBolums" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UyeCalismaAlanis" EntityType="Self.UyeCalismaAlanis" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Uyelers" EntityType="Self.Uyelers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UyeMails" EntityType="Self.UyeMails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UyeOgrenimDurumus" EntityType="Self.UyeOgrenimDurumus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UyeSirkets" EntityType="Self.UyeSirkets" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UyeTels" EntityType="Self.UyeTels" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DuyuruBasvuruView" EntityType="Self.DuyuruBasvuruView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[DuyuruBasvuruView].[duyuruBasvuru_id] AS [duyuruBasvuru_id], 
+[DuyuruBasvuruView].[duyuru_id] AS [duyuru_id], 
+[DuyuruBasvuruView].[uye_tc] AS [uye_tc], 
+[DuyuruBasvuruView].[uye_AdSoyad] AS [uye_AdSoyad]
+FROM [dbo].[DuyuruBasvuruView] AS [DuyuruBasvuruView]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="DuyuruKapsamView" EntityType="Self.DuyuruKapsamView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[DuyuruKapsamView].[duyuruKapsam_id] AS [duyuruKapsam_id], 
+[DuyuruKapsamView].[duyuru_id] AS [duyuru_id], 
+[DuyuruKapsamView].[calismaAlani_id] AS [calismaAlani_id], 
+[DuyuruKapsamView].[calismaAlani_adi] AS [calismaAlani_adi], 
+[DuyuruKapsamView].[bolum_adi] AS [bolum_adi], 
+[DuyuruKapsamView].[fakulte_adi] AS [fakulte_adi]
+FROM [dbo].[DuyuruKapsamView] AS [DuyuruKapsamView]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="DuyurularView" EntityType="Self.DuyurularView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[DuyurularView].[duyuru_id] AS [duyuru_id], 
+[DuyurularView].[duyuru_Basligi] AS [duyuru_Basligi], 
+[DuyurularView].[duyuru_Metin] AS [duyuru_Metin], 
+[DuyurularView].[duyuru_Resim] AS [duyuru_Resim], 
+[DuyurularView].[duyuru_yayinTarihi] AS [duyuru_yayinTarihi], 
+[DuyurularView].[duyuru_bitisTarihi] AS [duyuru_bitisTarihi], 
+[DuyurularView].[duyuru_sahibiTc] AS [duyuru_sahibiTc], 
+[DuyurularView].[duyuru_sahibiAdSoyad] AS [duyuru_sahibiAdSoyad]
+FROM [dbo].[DuyurularView] AS [DuyurularView]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="UyeBolumView" EntityType="Self.UyeBolumView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[UyeBolumView].[uye_tc] AS [uye_tc], 
+[UyeBolumView].[uyeBolum_id] AS [uyeBolum_id], 
+[UyeBolumView].[bolum_adi] AS [bolum_adi], 
+[UyeBolumView].[fakulte_adi] AS [fakulte_adi]
+FROM [dbo].[UyeBolumView] AS [UyeBolumView]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="UyeCalismaAlaniView" EntityType="Self.UyeCalismaAlaniView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[UyeCalismaAlaniView].[uye_tc] AS [uye_tc], 
+[UyeCalismaAlaniView].[uyeCalismaAlani_id] AS [uyeCalismaAlani_id], 
+[UyeCalismaAlaniView].[calismaAlani_adi] AS [calismaAlani_adi], 
+[UyeCalismaAlaniView].[bolum_adi] AS [bolum_adi], 
+[UyeCalismaAlaniView].[fakulte_adi] AS [fakulte_adi]
+FROM [dbo].[UyeCalismaAlaniView] AS [UyeCalismaAlaniView]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="UyeSirketView" EntityType="Self.UyeSirketView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[UyeSirketView].[uye_tc] AS [uye_tc], 
+[UyeSirketView].[uyeSirket_id] AS [uyeSirket_id], 
+[UyeSirketView].[uyeSirket_durum] AS [uyeSirket_durum], 
+[UyeSirketView].[sirket_adi] AS [sirket_adi], 
+[UyeSirketView].[sirket_adres] AS [sirket_adres], 
+[UyeSirketView].[sirket_tel] AS [sirket_tel], 
+[UyeSirketView].[sirket_web] AS [sirket_web]
+FROM [dbo].[UyeSirketView] AS [UyeSirketView]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_dbo_Bolumlers_dbo_Fakultelers_bolum_FakulteId" Association="Self.FK_dbo_Bolumlers_dbo_Fakultelers_bolum_FakulteId">
+            <End Role="Fakultelers" EntitySet="Fakultelers" />
+            <End Role="Bolumlers" EntitySet="Bolumlers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_CalismaAlanlaris_dbo_Bolumlers_bolum_Id" Association="Self.FK_dbo_CalismaAlanlaris_dbo_Bolumlers_bolum_Id">
+            <End Role="Bolumlers" EntitySet="Bolumlers" />
+            <End Role="CalismaAlanlaris" EntitySet="CalismaAlanlaris" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_DuyuruBasvurus_dbo_Duyurulars_duyuru_id" Association="Self.FK_dbo_DuyuruBasvurus_dbo_Duyurulars_duyuru_id">
+            <End Role="Duyurulars" EntitySet="Duyurulars" />
+            <End Role="DuyuruBasvurus" EntitySet="DuyuruBasvurus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_DuyuruBasvurus_dbo_Uyelers_uye_tc" Association="Self.FK_dbo_DuyuruBasvurus_dbo_Uyelers_uye_tc">
+            <End Role="Uyelers" EntitySet="Uyelers" />
+            <End Role="DuyuruBasvurus" EntitySet="DuyuruBasvurus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_DuyuruKapsamis_dbo_CalismaAlanlaris_calismaAlani_id" Association="Self.FK_dbo_DuyuruKapsamis_dbo_CalismaAlanlaris_calismaAlani_id">
+            <End Role="CalismaAlanlaris" EntitySet="CalismaAlanlaris" />
+            <End Role="DuyuruKapsamis" EntitySet="DuyuruKapsamis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_DuyuruKapsamis_dbo_Duyurulars_duyuru_id" Association="Self.FK_dbo_DuyuruKapsamis_dbo_Duyurulars_duyuru_id">
+            <End Role="Duyurulars" EntitySet="Duyurulars" />
+            <End Role="DuyuruKapsamis" EntitySet="DuyuruKapsamis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Duyurulars_dbo_Uyelers_duyuru_sahibiTc" Association="Self.FK_dbo_Duyurulars_dbo_Uyelers_duyuru_sahibiTc">
+            <End Role="Uyelers" EntitySet="Uyelers" />
+            <End Role="Duyurulars" EntitySet="Duyurulars" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Ilcelers_dbo_Sehirlers_ilce_SehirId" Association="Self.FK_dbo_Ilcelers_dbo_Sehirlers_ilce_SehirId">
+            <End Role="Sehirlers" EntitySet="Sehirlers" />
+            <End Role="Ilcelers" EntitySet="Ilcelers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_SirketAdres_dbo_Sirketlers_sirket_Id" Association="Self.FK_dbo_SirketAdres_dbo_Sirketlers_sirket_Id">
+            <End Role="Sirketlers" EntitySet="Sirketlers" />
+            <End Role="SirketAdres" EntitySet="SirketAdres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_SirketTels_dbo_Sirketlers_sirket_Id" Association="Self.FK_dbo_SirketTels_dbo_Sirketlers_sirket_Id">
+            <End Role="Sirketlers" EntitySet="Sirketlers" />
+            <End Role="SirketTels" EntitySet="SirketTels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_SirketWebs_dbo_Sirketlers_sirket_Id" Association="Self.FK_dbo_SirketWebs_dbo_Sirketlers_sirket_Id">
+            <End Role="Sirketlers" EntitySet="Sirketlers" />
+            <End Role="SirketWebs" EntitySet="SirketWebs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UyeAdres_dbo_Uyelers_uye_tc" Association="Self.FK_dbo_UyeAdres_dbo_Uyelers_uye_tc">
+            <End Role="Uyelers" EntitySet="Uyelers" />
+            <End Role="UyeAdres" EntitySet="UyeAdres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UyeBolums_dbo_Bolumlers_bolum_id" Association="Self.FK_dbo_UyeBolums_dbo_Bolumlers_bolum_id">
+            <End Role="Bolumlers" EntitySet="Bolumlers" />
+            <End Role="UyeBolums" EntitySet="UyeBolums" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UyeBolums_dbo_Uyelers_uye_tc" Association="Self.FK_dbo_UyeBolums_dbo_Uyelers_uye_tc">
+            <End Role="Uyelers" EntitySet="Uyelers" />
+            <End Role="UyeBolums" EntitySet="UyeBolums" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UyeCalismaAlanis_dbo_CalismaAlanlaris_calismaAlani_id" Association="Self.FK_dbo_UyeCalismaAlanis_dbo_CalismaAlanlaris_calismaAlani_id">
+            <End Role="CalismaAlanlaris" EntitySet="CalismaAlanlaris" />
+            <End Role="UyeCalismaAlanis" EntitySet="UyeCalismaAlanis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UyeCalismaAlanis_dbo_Uyelers_uye_tc" Association="Self.FK_dbo_UyeCalismaAlanis_dbo_Uyelers_uye_tc">
+            <End Role="Uyelers" EntitySet="Uyelers" />
+            <End Role="UyeCalismaAlanis" EntitySet="UyeCalismaAlanis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Uyelers_dbo_Ilcelers_uye_dogumYeri_id" Association="Self.FK_dbo_Uyelers_dbo_Ilcelers_uye_dogumYeri_id">
+            <End Role="Ilcelers" EntitySet="Ilcelers" />
+            <End Role="Uyelers" EntitySet="Uyelers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UyeMails_dbo_Uyelers_uye_tc" Association="Self.FK_dbo_UyeMails_dbo_Uyelers_uye_tc">
+            <End Role="Uyelers" EntitySet="Uyelers" />
+            <End Role="UyeMails" EntitySet="UyeMails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UyeOgrenimDurumus_dbo_OgrenimDurumlaris_ogrenimD_id" Association="Self.FK_dbo_UyeOgrenimDurumus_dbo_OgrenimDurumlaris_ogrenimD_id">
+            <End Role="OgrenimDurumlaris" EntitySet="OgrenimDurumlaris" />
+            <End Role="UyeOgrenimDurumus" EntitySet="UyeOgrenimDurumus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UyeOgrenimDurumus_dbo_Uyelers_uye_tc" Association="Self.FK_dbo_UyeOgrenimDurumus_dbo_Uyelers_uye_tc">
+            <End Role="Uyelers" EntitySet="Uyelers" />
+            <End Role="UyeOgrenimDurumus" EntitySet="UyeOgrenimDurumus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UyeSirkets_dbo_Sirketlers_sirket_id" Association="Self.FK_dbo_UyeSirkets_dbo_Sirketlers_sirket_id">
+            <End Role="Sirketlers" EntitySet="Sirketlers" />
+            <End Role="UyeSirkets" EntitySet="UyeSirkets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UyeSirkets_dbo_Uyelers_uye_tc" Association="Self.FK_dbo_UyeSirkets_dbo_Uyelers_uye_tc">
+            <End Role="Uyelers" EntitySet="Uyelers" />
+            <End Role="UyeSirkets" EntitySet="UyeSirkets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UyeTels_dbo_Uyelers_uye_tc" Association="Self.FK_dbo_UyeTels_dbo_Uyelers_uye_tc">
+            <End Role="Uyelers" EntitySet="Uyelers" />
+            <End Role="UyeTels" EntitySet="UyeTels" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MezunTakipDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Bolumlers">
+          <Key>
+            <PropertyRef Name="bolum_id" />
+          </Key>
+          <Property Name="bolum_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="bolum_adi" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="bolum_kodu" Type="Int32" Nullable="false" />
+          <Property Name="bolum_FakulteId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Fakultelers" Relationship="Self.FK_dbo_Bolumlers_dbo_Fakultelers_bolum_FakulteId" FromRole="Bolumlers" ToRole="Fakultelers" />
+          <NavigationProperty Name="CalismaAlanlaris" Relationship="Self.FK_dbo_CalismaAlanlaris_dbo_Bolumlers_bolum_Id" FromRole="Bolumlers" ToRole="CalismaAlanlaris" />
+          <NavigationProperty Name="UyeBolums" Relationship="Self.FK_dbo_UyeBolums_dbo_Bolumlers_bolum_id" FromRole="Bolumlers" ToRole="UyeBolums" />
+        </EntityType>
+        <EntityType Name="CalismaAlanlaris">
+          <Key>
+            <PropertyRef Name="calismaAlani_id" />
+          </Key>
+          <Property Name="calismaAlani_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="calismaAlani_adi" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="bolum_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Bolumlers" Relationship="Self.FK_dbo_CalismaAlanlaris_dbo_Bolumlers_bolum_Id" FromRole="CalismaAlanlaris" ToRole="Bolumlers" />
+          <NavigationProperty Name="DuyuruKapsamis" Relationship="Self.FK_dbo_DuyuruKapsamis_dbo_CalismaAlanlaris_calismaAlani_id" FromRole="CalismaAlanlaris" ToRole="DuyuruKapsamis" />
+          <NavigationProperty Name="UyeCalismaAlanis" Relationship="Self.FK_dbo_UyeCalismaAlanis_dbo_CalismaAlanlaris_calismaAlani_id" FromRole="CalismaAlanlaris" ToRole="UyeCalismaAlanis" />
+        </EntityType>
+        <EntityType Name="DuyuruBasvurus">
+          <Key>
+            <PropertyRef Name="duyuruBasvuru_id" />
+          </Key>
+          <Property Name="duyuruBasvuru_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="duyuru_id" Type="Int32" Nullable="false" />
+          <Property Name="uye_tc" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Duyurulars" Relationship="Self.FK_dbo_DuyuruBasvurus_dbo_Duyurulars_duyuru_id" FromRole="DuyuruBasvurus" ToRole="Duyurulars" />
+          <NavigationProperty Name="Uyelers" Relationship="Self.FK_dbo_DuyuruBasvurus_dbo_Uyelers_uye_tc" FromRole="DuyuruBasvurus" ToRole="Uyelers" />
+          <Property Name="duyuruBasvuru_durum" Type="Int32" />
+        </EntityType>
+        <EntityType Name="DuyuruKapsamis">
+          <Key>
+            <PropertyRef Name="duyuruKapsam_id" />
+          </Key>
+          <Property Name="duyuruKapsam_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="duyuru_id" Type="Int32" Nullable="false" />
+          <Property Name="calismaAlani_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CalismaAlanlaris" Relationship="Self.FK_dbo_DuyuruKapsamis_dbo_CalismaAlanlaris_calismaAlani_id" FromRole="DuyuruKapsamis" ToRole="CalismaAlanlaris" />
+          <NavigationProperty Name="Duyurulars" Relationship="Self.FK_dbo_DuyuruKapsamis_dbo_Duyurulars_duyuru_id" FromRole="DuyuruKapsamis" ToRole="Duyurulars" />
+        </EntityType>
+        <EntityType Name="Duyurulars">
+          <Key>
+            <PropertyRef Name="duyuru_id" />
+          </Key>
+          <Property Name="duyuru_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="duyuru_Basligi" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="duyuru_Metin" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="duyuru_Resim" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="duyuru_yayinTarihi" Type="DateTime" Precision="3" />
+          <Property Name="duyuru_bitisTarihi" Type="DateTime" Precision="3" />
+          <Property Name="duyuru_sahibiTc" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="DuyuruBasvurus" Relationship="Self.FK_dbo_DuyuruBasvurus_dbo_Duyurulars_duyuru_id" FromRole="Duyurulars" ToRole="DuyuruBasvurus" />
+          <NavigationProperty Name="DuyuruKapsamis" Relationship="Self.FK_dbo_DuyuruKapsamis_dbo_Duyurulars_duyuru_id" FromRole="Duyurulars" ToRole="DuyuruKapsamis" />
+          <NavigationProperty Name="Uyelers" Relationship="Self.FK_dbo_Duyurulars_dbo_Uyelers_duyuru_sahibiTc" FromRole="Duyurulars" ToRole="Uyelers" />
+        </EntityType>
+        <EntityType Name="Fakultelers">
+          <Key>
+            <PropertyRef Name="fakulte_id" />
+          </Key>
+          <Property Name="fakulte_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fakulte_adi" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fakulte_kodu" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Bolumlers" Relationship="Self.FK_dbo_Bolumlers_dbo_Fakultelers_bolum_FakulteId" FromRole="Fakultelers" ToRole="Bolumlers" />
+        </EntityType>
+        <EntityType Name="Ilcelers">
+          <Key>
+            <PropertyRef Name="ilce_id" />
+          </Key>
+          <Property Name="ilce_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ilce_adi" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ilce_SehirId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Sehirlers" Relationship="Self.FK_dbo_Ilcelers_dbo_Sehirlers_ilce_SehirId" FromRole="Ilcelers" ToRole="Sehirlers" />
+          <NavigationProperty Name="Uyelers" Relationship="Self.FK_dbo_Uyelers_dbo_Ilcelers_uye_dogumYeri_id" FromRole="Ilcelers" ToRole="Uyelers" />
+        </EntityType>
+        <EntityType Name="OgrenimDurumlaris">
+          <Key>
+            <PropertyRef Name="ogrenimD_id" />
+          </Key>
+          <Property Name="ogrenimD_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ogrenimD_tanim" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="UyeOgrenimDurumus" Relationship="Self.FK_dbo_UyeOgrenimDurumus_dbo_OgrenimDurumlaris_ogrenimD_id" FromRole="OgrenimDurumlaris" ToRole="UyeOgrenimDurumus" />
+        </EntityType>
+        <EntityType Name="Sehirlers">
+          <Key>
+            <PropertyRef Name="sehir_id" />
+          </Key>
+          <Property Name="sehir_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sehir_adi" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="sehir_kodu" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Ilcelers" Relationship="Self.FK_dbo_Ilcelers_dbo_Sehirlers_ilce_SehirId" FromRole="Sehirlers" ToRole="Ilcelers" />
+        </EntityType>
+        <EntityType Name="SirketAdres">
+          <Key>
+            <PropertyRef Name="sirketAdres_id" />
+          </Key>
+          <Property Name="sirketAdres_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sirket_adres" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="sirket_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Sirketlers" Relationship="Self.FK_dbo_SirketAdres_dbo_Sirketlers_sirket_Id" FromRole="SirketAdres" ToRole="Sirketlers" />
+        </EntityType>
+        <EntityType Name="Sirketlers">
+          <Key>
+            <PropertyRef Name="sirket_id" />
+          </Key>
+          <Property Name="sirket_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sirket_adi" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="SirketAdres" Relationship="Self.FK_dbo_SirketAdres_dbo_Sirketlers_sirket_Id" FromRole="Sirketlers" ToRole="SirketAdres" />
+          <NavigationProperty Name="SirketTels" Relationship="Self.FK_dbo_SirketTels_dbo_Sirketlers_sirket_Id" FromRole="Sirketlers" ToRole="SirketTels" />
+          <NavigationProperty Name="SirketWebs" Relationship="Self.FK_dbo_SirketWebs_dbo_Sirketlers_sirket_Id" FromRole="Sirketlers" ToRole="SirketWebs" />
+          <NavigationProperty Name="UyeSirkets" Relationship="Self.FK_dbo_UyeSirkets_dbo_Sirketlers_sirket_id" FromRole="Sirketlers" ToRole="UyeSirkets" />
+        </EntityType>
+        <EntityType Name="SirketTels">
+          <Key>
+            <PropertyRef Name="sirketTel_id" />
+          </Key>
+          <Property Name="sirketTel_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sirket_tel" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="sirket_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Sirketlers" Relationship="Self.FK_dbo_SirketTels_dbo_Sirketlers_sirket_Id" FromRole="SirketTels" ToRole="Sirketlers" />
+        </EntityType>
+        <EntityType Name="SirketWebs">
+          <Key>
+            <PropertyRef Name="sirketWeb_id" />
+          </Key>
+          <Property Name="sirketWeb_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sirket_web" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="sirket_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Sirketlers" Relationship="Self.FK_dbo_SirketWebs_dbo_Sirketlers_sirket_Id" FromRole="SirketWebs" ToRole="Sirketlers" />
+        </EntityType>
+        <EntityType Name="UyeAdres">
+          <Key>
+            <PropertyRef Name="uyeAdres_id" />
+          </Key>
+          <Property Name="uyeAdres_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="uye_adres" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="uye_tc" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Uyelers" Relationship="Self.FK_dbo_UyeAdres_dbo_Uyelers_uye_tc" FromRole="UyeAdres" ToRole="Uyelers" />
+        </EntityType>
+        <EntityType Name="UyeBolums">
+          <Key>
+            <PropertyRef Name="uyeBolum_id" />
+          </Key>
+          <Property Name="uyeBolum_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="bolum_id" Type="Int32" Nullable="false" />
+          <Property Name="uye_tc" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Bolumlers" Relationship="Self.FK_dbo_UyeBolums_dbo_Bolumlers_bolum_id" FromRole="UyeBolums" ToRole="Bolumlers" />
+          <NavigationProperty Name="Uyelers" Relationship="Self.FK_dbo_UyeBolums_dbo_Uyelers_uye_tc" FromRole="UyeBolums" ToRole="Uyelers" />
+        </EntityType>
+        <EntityType Name="UyeCalismaAlanis">
+          <Key>
+            <PropertyRef Name="uyeCalismaAlani_id" />
+          </Key>
+          <Property Name="uyeCalismaAlani_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="calismaAlani_id" Type="Int32" Nullable="false" />
+          <Property Name="uye_tc" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CalismaAlanlaris" Relationship="Self.FK_dbo_UyeCalismaAlanis_dbo_CalismaAlanlaris_calismaAlani_id" FromRole="UyeCalismaAlanis" ToRole="CalismaAlanlaris" />
+          <NavigationProperty Name="Uyelers" Relationship="Self.FK_dbo_UyeCalismaAlanis_dbo_Uyelers_uye_tc" FromRole="UyeCalismaAlanis" ToRole="Uyelers" />
+        </EntityType>
+        <EntityType Name="Uyelers">
+          <Key>
+            <PropertyRef Name="uye_tc" />
+          </Key>
+          <Property Name="uye_tc" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="uye_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="uye_ad" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="uye_soyad" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="uye_sifre" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="uye_dogumTarihi" Type="DateTime" Precision="3" />
+          <Property Name="uye_cinsiyet" Type="Int32" Nullable="false" />
+          <Property Name="uye_askerlikDurumu" Type="Int32" />
+          <Property Name="uye_foto" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="uye_dogumYeri_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="DuyuruBasvurus" Relationship="Self.FK_dbo_DuyuruBasvurus_dbo_Uyelers_uye_tc" FromRole="Uyelers" ToRole="DuyuruBasvurus" />
+          <NavigationProperty Name="Duyurulars" Relationship="Self.FK_dbo_Duyurulars_dbo_Uyelers_duyuru_sahibiTc" FromRole="Uyelers" ToRole="Duyurulars" />
+          <NavigationProperty Name="Ilcelers" Relationship="Self.FK_dbo_Uyelers_dbo_Ilcelers_uye_dogumYeri_id" FromRole="Uyelers" ToRole="Ilcelers" />
+          <NavigationProperty Name="UyeAdres" Relationship="Self.FK_dbo_UyeAdres_dbo_Uyelers_uye_tc" FromRole="Uyelers" ToRole="UyeAdres" />
+          <NavigationProperty Name="UyeBolums" Relationship="Self.FK_dbo_UyeBolums_dbo_Uyelers_uye_tc" FromRole="Uyelers" ToRole="UyeBolums" />
+          <NavigationProperty Name="UyeCalismaAlanis" Relationship="Self.FK_dbo_UyeCalismaAlanis_dbo_Uyelers_uye_tc" FromRole="Uyelers" ToRole="UyeCalismaAlanis" />
+          <NavigationProperty Name="UyeMails" Relationship="Self.FK_dbo_UyeMails_dbo_Uyelers_uye_tc" FromRole="Uyelers" ToRole="UyeMails" />
+          <NavigationProperty Name="UyeOgrenimDurumus" Relationship="Self.FK_dbo_UyeOgrenimDurumus_dbo_Uyelers_uye_tc" FromRole="Uyelers" ToRole="UyeOgrenimDurumus" />
+          <NavigationProperty Name="UyeSirkets" Relationship="Self.FK_dbo_UyeSirkets_dbo_Uyelers_uye_tc" FromRole="Uyelers" ToRole="UyeSirkets" />
+          <NavigationProperty Name="UyeTels" Relationship="Self.FK_dbo_UyeTels_dbo_Uyelers_uye_tc" FromRole="Uyelers" ToRole="UyeTels" />
+        </EntityType>
+        <EntityType Name="UyeMails">
+          <Key>
+            <PropertyRef Name="uyeMail_id" />
+          </Key>
+          <Property Name="uyeMail_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="uyeMail_adres" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="uye_tc" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Uyelers" Relationship="Self.FK_dbo_UyeMails_dbo_Uyelers_uye_tc" FromRole="UyeMails" ToRole="Uyelers" />
+        </EntityType>
+        <EntityType Name="UyeOgrenimDurumus">
+          <Key>
+            <PropertyRef Name="uyeOgrenimD_id" />
+          </Key>
+          <Property Name="uyeOgrenimD_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ogrenimD_durum" Type="Int32" Nullable="false" />
+          <Property Name="ogrenimD_id" Type="Int32" Nullable="false" />
+          <Property Name="uye_tc" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="OgrenimDurumlaris" Relationship="Self.FK_dbo_UyeOgrenimDurumus_dbo_OgrenimDurumlaris_ogrenimD_id" FromRole="UyeOgrenimDurumus" ToRole="OgrenimDurumlaris" />
+          <NavigationProperty Name="Uyelers" Relationship="Self.FK_dbo_UyeOgrenimDurumus_dbo_Uyelers_uye_tc" FromRole="UyeOgrenimDurumus" ToRole="Uyelers" />
+        </EntityType>
+        <EntityType Name="UyeSirkets">
+          <Key>
+            <PropertyRef Name="uyeSirket_id" />
+          </Key>
+          <Property Name="uyeSirket_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="uyeSirket_durum" Type="Int32" Nullable="false" />
+          <Property Name="sirket_id" Type="Int32" Nullable="false" />
+          <Property Name="uye_tc" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Sirketlers" Relationship="Self.FK_dbo_UyeSirkets_dbo_Sirketlers_sirket_id" FromRole="UyeSirkets" ToRole="Sirketlers" />
+          <NavigationProperty Name="Uyelers" Relationship="Self.FK_dbo_UyeSirkets_dbo_Uyelers_uye_tc" FromRole="UyeSirkets" ToRole="Uyelers" />
+        </EntityType>
+        <EntityType Name="UyeTels">
+          <Key>
+            <PropertyRef Name="uyeTel_id" />
+          </Key>
+          <Property Name="uyeTel_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="uye_tel" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="uye_tc" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Uyelers" Relationship="Self.FK_dbo_UyeTels_dbo_Uyelers_uye_tc" FromRole="UyeTels" ToRole="Uyelers" />
+        </EntityType>
+        <Association Name="FK_dbo_Bolumlers_dbo_Fakultelers_bolum_FakulteId">
+          <End Role="Fakultelers" Type="Self.Fakultelers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Bolumlers" Type="Self.Bolumlers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fakultelers">
+              <PropertyRef Name="fakulte_id" />
+            </Principal>
+            <Dependent Role="Bolumlers">
+              <PropertyRef Name="bolum_FakulteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_CalismaAlanlaris_dbo_Bolumlers_bolum_Id">
+          <End Role="Bolumlers" Type="Self.Bolumlers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CalismaAlanlaris" Type="Self.CalismaAlanlaris" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bolumlers">
+              <PropertyRef Name="bolum_id" />
+            </Principal>
+            <Dependent Role="CalismaAlanlaris">
+              <PropertyRef Name="bolum_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UyeBolums_dbo_Bolumlers_bolum_id">
+          <End Role="Bolumlers" Type="Self.Bolumlers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UyeBolums" Type="Self.UyeBolums" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bolumlers">
+              <PropertyRef Name="bolum_id" />
+            </Principal>
+            <Dependent Role="UyeBolums">
+              <PropertyRef Name="bolum_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_DuyuruKapsamis_dbo_CalismaAlanlaris_calismaAlani_id">
+          <End Role="CalismaAlanlaris" Type="Self.CalismaAlanlaris" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="DuyuruKapsamis" Type="Self.DuyuruKapsamis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CalismaAlanlaris">
+              <PropertyRef Name="calismaAlani_id" />
+            </Principal>
+            <Dependent Role="DuyuruKapsamis">
+              <PropertyRef Name="calismaAlani_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UyeCalismaAlanis_dbo_CalismaAlanlaris_calismaAlani_id">
+          <End Role="CalismaAlanlaris" Type="Self.CalismaAlanlaris" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UyeCalismaAlanis" Type="Self.UyeCalismaAlanis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CalismaAlanlaris">
+              <PropertyRef Name="calismaAlani_id" />
+            </Principal>
+            <Dependent Role="UyeCalismaAlanis">
+              <PropertyRef Name="calismaAlani_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_DuyuruBasvurus_dbo_Duyurulars_duyuru_id">
+          <End Role="Duyurulars" Type="Self.Duyurulars" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="DuyuruBasvurus" Type="Self.DuyuruBasvurus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Duyurulars">
+              <PropertyRef Name="duyuru_id" />
+            </Principal>
+            <Dependent Role="DuyuruBasvurus">
+              <PropertyRef Name="duyuru_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_DuyuruBasvurus_dbo_Uyelers_uye_tc">
+          <End Role="Uyelers" Type="Self.Uyelers" Multiplicity="0..1" />
+          <End Role="DuyuruBasvurus" Type="Self.DuyuruBasvurus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uyelers">
+              <PropertyRef Name="uye_tc" />
+            </Principal>
+            <Dependent Role="DuyuruBasvurus">
+              <PropertyRef Name="uye_tc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_DuyuruKapsamis_dbo_Duyurulars_duyuru_id">
+          <End Role="Duyurulars" Type="Self.Duyurulars" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="DuyuruKapsamis" Type="Self.DuyuruKapsamis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Duyurulars">
+              <PropertyRef Name="duyuru_id" />
+            </Principal>
+            <Dependent Role="DuyuruKapsamis">
+              <PropertyRef Name="duyuru_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Duyurulars_dbo_Uyelers_duyuru_sahibiTc">
+          <End Role="Uyelers" Type="Self.Uyelers" Multiplicity="0..1" />
+          <End Role="Duyurulars" Type="Self.Duyurulars" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uyelers">
+              <PropertyRef Name="uye_tc" />
+            </Principal>
+            <Dependent Role="Duyurulars">
+              <PropertyRef Name="duyuru_sahibiTc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Ilcelers_dbo_Sehirlers_ilce_SehirId">
+          <End Role="Sehirlers" Type="Self.Sehirlers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Ilcelers" Type="Self.Ilcelers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sehirlers">
+              <PropertyRef Name="sehir_id" />
+            </Principal>
+            <Dependent Role="Ilcelers">
+              <PropertyRef Name="ilce_SehirId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Uyelers_dbo_Ilcelers_uye_dogumYeri_id">
+          <End Role="Ilcelers" Type="Self.Ilcelers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Uyelers" Type="Self.Uyelers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ilcelers">
+              <PropertyRef Name="ilce_id" />
+            </Principal>
+            <Dependent Role="Uyelers">
+              <PropertyRef Name="uye_dogumYeri_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UyeOgrenimDurumus_dbo_OgrenimDurumlaris_ogrenimD_id">
+          <End Role="OgrenimDurumlaris" Type="Self.OgrenimDurumlaris" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UyeOgrenimDurumus" Type="Self.UyeOgrenimDurumus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OgrenimDurumlaris">
+              <PropertyRef Name="ogrenimD_id" />
+            </Principal>
+            <Dependent Role="UyeOgrenimDurumus">
+              <PropertyRef Name="ogrenimD_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_SirketAdres_dbo_Sirketlers_sirket_Id">
+          <End Role="Sirketlers" Type="Self.Sirketlers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="SirketAdres" Type="Self.SirketAdres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sirketlers">
+              <PropertyRef Name="sirket_id" />
+            </Principal>
+            <Dependent Role="SirketAdres">
+              <PropertyRef Name="sirket_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_SirketTels_dbo_Sirketlers_sirket_Id">
+          <End Role="Sirketlers" Type="Self.Sirketlers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="SirketTels" Type="Self.SirketTels" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sirketlers">
+              <PropertyRef Name="sirket_id" />
+            </Principal>
+            <Dependent Role="SirketTels">
+              <PropertyRef Name="sirket_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_SirketWebs_dbo_Sirketlers_sirket_Id">
+          <End Role="Sirketlers" Type="Self.Sirketlers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="SirketWebs" Type="Self.SirketWebs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sirketlers">
+              <PropertyRef Name="sirket_id" />
+            </Principal>
+            <Dependent Role="SirketWebs">
+              <PropertyRef Name="sirket_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UyeSirkets_dbo_Sirketlers_sirket_id">
+          <End Role="Sirketlers" Type="Self.Sirketlers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UyeSirkets" Type="Self.UyeSirkets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sirketlers">
+              <PropertyRef Name="sirket_id" />
+            </Principal>
+            <Dependent Role="UyeSirkets">
+              <PropertyRef Name="sirket_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UyeAdres_dbo_Uyelers_uye_tc">
+          <End Role="Uyelers" Type="Self.Uyelers" Multiplicity="0..1" />
+          <End Role="UyeAdres" Type="Self.UyeAdres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uyelers">
+              <PropertyRef Name="uye_tc" />
+            </Principal>
+            <Dependent Role="UyeAdres">
+              <PropertyRef Name="uye_tc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UyeBolums_dbo_Uyelers_uye_tc">
+          <End Role="Uyelers" Type="Self.Uyelers" Multiplicity="0..1" />
+          <End Role="UyeBolums" Type="Self.UyeBolums" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uyelers">
+              <PropertyRef Name="uye_tc" />
+            </Principal>
+            <Dependent Role="UyeBolums">
+              <PropertyRef Name="uye_tc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UyeCalismaAlanis_dbo_Uyelers_uye_tc">
+          <End Role="Uyelers" Type="Self.Uyelers" Multiplicity="0..1" />
+          <End Role="UyeCalismaAlanis" Type="Self.UyeCalismaAlanis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uyelers">
+              <PropertyRef Name="uye_tc" />
+            </Principal>
+            <Dependent Role="UyeCalismaAlanis">
+              <PropertyRef Name="uye_tc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UyeMails_dbo_Uyelers_uye_tc">
+          <End Role="Uyelers" Type="Self.Uyelers" Multiplicity="0..1" />
+          <End Role="UyeMails" Type="Self.UyeMails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uyelers">
+              <PropertyRef Name="uye_tc" />
+            </Principal>
+            <Dependent Role="UyeMails">
+              <PropertyRef Name="uye_tc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UyeOgrenimDurumus_dbo_Uyelers_uye_tc">
+          <End Role="Uyelers" Type="Self.Uyelers" Multiplicity="0..1" />
+          <End Role="UyeOgrenimDurumus" Type="Self.UyeOgrenimDurumus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uyelers">
+              <PropertyRef Name="uye_tc" />
+            </Principal>
+            <Dependent Role="UyeOgrenimDurumus">
+              <PropertyRef Name="uye_tc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UyeSirkets_dbo_Uyelers_uye_tc">
+          <End Role="Uyelers" Type="Self.Uyelers" Multiplicity="0..1" />
+          <End Role="UyeSirkets" Type="Self.UyeSirkets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uyelers">
+              <PropertyRef Name="uye_tc" />
+            </Principal>
+            <Dependent Role="UyeSirkets">
+              <PropertyRef Name="uye_tc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UyeTels_dbo_Uyelers_uye_tc">
+          <End Role="Uyelers" Type="Self.Uyelers" Multiplicity="0..1" />
+          <End Role="UyeTels" Type="Self.UyeTels" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uyelers">
+              <PropertyRef Name="uye_tc" />
+            </Principal>
+            <Dependent Role="UyeTels">
+              <PropertyRef Name="uye_tc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MezunTakipDbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+          <EntitySet Name="Bolumlers" EntityType="Self.Bolumlers" />
+          <EntitySet Name="CalismaAlanlaris" EntityType="Self.CalismaAlanlaris" />
+          <EntitySet Name="DuyuruBasvurus" EntityType="Self.DuyuruBasvurus" />
+          <EntitySet Name="DuyuruKapsamis" EntityType="Self.DuyuruKapsamis" />
+          <EntitySet Name="Duyurulars" EntityType="Self.Duyurulars" />
+          <EntitySet Name="Fakultelers" EntityType="Self.Fakultelers" />
+          <EntitySet Name="Ilcelers" EntityType="Self.Ilcelers" />
+          <EntitySet Name="OgrenimDurumlaris" EntityType="Self.OgrenimDurumlaris" />
+          <EntitySet Name="Sehirlers" EntityType="Self.Sehirlers" />
+          <EntitySet Name="SirketAdres" EntityType="Self.SirketAdres" />
+          <EntitySet Name="Sirketlers" EntityType="Self.Sirketlers" />
+          <EntitySet Name="SirketTels" EntityType="Self.SirketTels" />
+          <EntitySet Name="SirketWebs" EntityType="Self.SirketWebs" />
+          <EntitySet Name="UyeAdres" EntityType="Self.UyeAdres" />
+          <EntitySet Name="UyeBolums" EntityType="Self.UyeBolums" />
+          <EntitySet Name="UyeCalismaAlanis" EntityType="Self.UyeCalismaAlanis" />
+          <EntitySet Name="Uyelers" EntityType="Self.Uyelers" />
+          <EntitySet Name="UyeMails" EntityType="Self.UyeMails" />
+          <EntitySet Name="UyeOgrenimDurumus" EntityType="Self.UyeOgrenimDurumus" />
+          <EntitySet Name="UyeSirkets" EntityType="Self.UyeSirkets" />
+          <EntitySet Name="UyeTels" EntityType="Self.UyeTels" />
+          <AssociationSet Name="FK_dbo_Bolumlers_dbo_Fakultelers_bolum_FakulteId" Association="Self.FK_dbo_Bolumlers_dbo_Fakultelers_bolum_FakulteId">
+            <End Role="Fakultelers" EntitySet="Fakultelers" />
+            <End Role="Bolumlers" EntitySet="Bolumlers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_CalismaAlanlaris_dbo_Bolumlers_bolum_Id" Association="Self.FK_dbo_CalismaAlanlaris_dbo_Bolumlers_bolum_Id">
+            <End Role="Bolumlers" EntitySet="Bolumlers" />
+            <End Role="CalismaAlanlaris" EntitySet="CalismaAlanlaris" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UyeBolums_dbo_Bolumlers_bolum_id" Association="Self.FK_dbo_UyeBolums_dbo_Bolumlers_bolum_id">
+            <End Role="Bolumlers" EntitySet="Bolumlers" />
+            <End Role="UyeBolums" EntitySet="UyeBolums" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_DuyuruKapsamis_dbo_CalismaAlanlaris_calismaAlani_id" Association="Self.FK_dbo_DuyuruKapsamis_dbo_CalismaAlanlaris_calismaAlani_id">
+            <End Role="CalismaAlanlaris" EntitySet="CalismaAlanlaris" />
+            <End Role="DuyuruKapsamis" EntitySet="DuyuruKapsamis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UyeCalismaAlanis_dbo_CalismaAlanlaris_calismaAlani_id" Association="Self.FK_dbo_UyeCalismaAlanis_dbo_CalismaAlanlaris_calismaAlani_id">
+            <End Role="CalismaAlanlaris" EntitySet="CalismaAlanlaris" />
+            <End Role="UyeCalismaAlanis" EntitySet="UyeCalismaAlanis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_DuyuruBasvurus_dbo_Duyurulars_duyuru_id" Association="Self.FK_dbo_DuyuruBasvurus_dbo_Duyurulars_duyuru_id">
+            <End Role="Duyurulars" EntitySet="Duyurulars" />
+            <End Role="DuyuruBasvurus" EntitySet="DuyuruBasvurus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_DuyuruBasvurus_dbo_Uyelers_uye_tc" Association="Self.FK_dbo_DuyuruBasvurus_dbo_Uyelers_uye_tc">
+            <End Role="Uyelers" EntitySet="Uyelers" />
+            <End Role="DuyuruBasvurus" EntitySet="DuyuruBasvurus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_DuyuruKapsamis_dbo_Duyurulars_duyuru_id" Association="Self.FK_dbo_DuyuruKapsamis_dbo_Duyurulars_duyuru_id">
+            <End Role="Duyurulars" EntitySet="Duyurulars" />
+            <End Role="DuyuruKapsamis" EntitySet="DuyuruKapsamis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Duyurulars_dbo_Uyelers_duyuru_sahibiTc" Association="Self.FK_dbo_Duyurulars_dbo_Uyelers_duyuru_sahibiTc">
+            <End Role="Uyelers" EntitySet="Uyelers" />
+            <End Role="Duyurulars" EntitySet="Duyurulars" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Ilcelers_dbo_Sehirlers_ilce_SehirId" Association="Self.FK_dbo_Ilcelers_dbo_Sehirlers_ilce_SehirId">
+            <End Role="Sehirlers" EntitySet="Sehirlers" />
+            <End Role="Ilcelers" EntitySet="Ilcelers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Uyelers_dbo_Ilcelers_uye_dogumYeri_id" Association="Self.FK_dbo_Uyelers_dbo_Ilcelers_uye_dogumYeri_id">
+            <End Role="Ilcelers" EntitySet="Ilcelers" />
+            <End Role="Uyelers" EntitySet="Uyelers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UyeOgrenimDurumus_dbo_OgrenimDurumlaris_ogrenimD_id" Association="Self.FK_dbo_UyeOgrenimDurumus_dbo_OgrenimDurumlaris_ogrenimD_id">
+            <End Role="OgrenimDurumlaris" EntitySet="OgrenimDurumlaris" />
+            <End Role="UyeOgrenimDurumus" EntitySet="UyeOgrenimDurumus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_SirketAdres_dbo_Sirketlers_sirket_Id" Association="Self.FK_dbo_SirketAdres_dbo_Sirketlers_sirket_Id">
+            <End Role="Sirketlers" EntitySet="Sirketlers" />
+            <End Role="SirketAdres" EntitySet="SirketAdres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_SirketTels_dbo_Sirketlers_sirket_Id" Association="Self.FK_dbo_SirketTels_dbo_Sirketlers_sirket_Id">
+            <End Role="Sirketlers" EntitySet="Sirketlers" />
+            <End Role="SirketTels" EntitySet="SirketTels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_SirketWebs_dbo_Sirketlers_sirket_Id" Association="Self.FK_dbo_SirketWebs_dbo_Sirketlers_sirket_Id">
+            <End Role="Sirketlers" EntitySet="Sirketlers" />
+            <End Role="SirketWebs" EntitySet="SirketWebs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UyeSirkets_dbo_Sirketlers_sirket_id" Association="Self.FK_dbo_UyeSirkets_dbo_Sirketlers_sirket_id">
+            <End Role="Sirketlers" EntitySet="Sirketlers" />
+            <End Role="UyeSirkets" EntitySet="UyeSirkets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UyeAdres_dbo_Uyelers_uye_tc" Association="Self.FK_dbo_UyeAdres_dbo_Uyelers_uye_tc">
+            <End Role="Uyelers" EntitySet="Uyelers" />
+            <End Role="UyeAdres" EntitySet="UyeAdres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UyeBolums_dbo_Uyelers_uye_tc" Association="Self.FK_dbo_UyeBolums_dbo_Uyelers_uye_tc">
+            <End Role="Uyelers" EntitySet="Uyelers" />
+            <End Role="UyeBolums" EntitySet="UyeBolums" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UyeCalismaAlanis_dbo_Uyelers_uye_tc" Association="Self.FK_dbo_UyeCalismaAlanis_dbo_Uyelers_uye_tc">
+            <End Role="Uyelers" EntitySet="Uyelers" />
+            <End Role="UyeCalismaAlanis" EntitySet="UyeCalismaAlanis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UyeMails_dbo_Uyelers_uye_tc" Association="Self.FK_dbo_UyeMails_dbo_Uyelers_uye_tc">
+            <End Role="Uyelers" EntitySet="Uyelers" />
+            <End Role="UyeMails" EntitySet="UyeMails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UyeOgrenimDurumus_dbo_Uyelers_uye_tc" Association="Self.FK_dbo_UyeOgrenimDurumus_dbo_Uyelers_uye_tc">
+            <End Role="Uyelers" EntitySet="Uyelers" />
+            <End Role="UyeOgrenimDurumus" EntitySet="UyeOgrenimDurumus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UyeSirkets_dbo_Uyelers_uye_tc" Association="Self.FK_dbo_UyeSirkets_dbo_Uyelers_uye_tc">
+            <End Role="Uyelers" EntitySet="Uyelers" />
+            <End Role="UyeSirkets" EntitySet="UyeSirkets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UyeTels_dbo_Uyelers_uye_tc" Association="Self.FK_dbo_UyeTels_dbo_Uyelers_uye_tc">
+            <End Role="Uyelers" EntitySet="Uyelers" />
+            <End Role="UyeTels" EntitySet="UyeTels" />
+          </AssociationSet>
+          <EntitySet Name="UyeBolumView" EntityType="MezunTakipDbModel.UyeBolumView" />
+          <EntitySet Name="UyeCalismaAlaniView" EntityType="MezunTakipDbModel.UyeCalismaAlaniView" />
+          <EntitySet Name="UyeSirketView" EntityType="MezunTakipDbModel.UyeSirketView" />
+          <EntitySet Name="DuyurularView" EntityType="MezunTakipDbModel.DuyurularView" />
+          <EntitySet Name="DuyuruBasvuruView" EntityType="MezunTakipDbModel.DuyuruBasvuruView" />
+          <EntitySet Name="DuyuruKapsamView" EntityType="MezunTakipDbModel.DuyuruKapsamView" />
+        </EntityContainer>
+        <EntityType Name="UyeBolumView">
+          <Key>
+            <PropertyRef Name="uyeBolum_id" />
+          </Key>
+          <Property Name="uyeBolum_id" Type="Int32" Nullable="false" />
+          <Property Name="bolum_adi" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="fakulte_adi" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="uye_tc" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="UyeCalismaAlaniView">
+          <Key>
+            <PropertyRef Name="uyeCalismaAlani_id" />
+          </Key>
+          <Property Name="uyeCalismaAlani_id" Type="Int32" Nullable="false" />
+          <Property Name="calismaAlani_adi" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="bolum_adi" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="fakulte_adi" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="uye_tc" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="UyeSirketView">
+          <Key>
+            <PropertyRef Name="uyeSirket_id" />
+          </Key>
+          <Property Name="uyeSirket_id" Type="Int32" Nullable="false" />
+          <Property Name="uyeSirket_durum" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="sirket_adi" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="sirket_adres" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="sirket_tel" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="sirket_web" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="uye_tc" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="DuyurularView">
+          <Key>
+            <PropertyRef Name="duyuru_Basligi" />
+            <PropertyRef Name="duyuru_Metin" />
+            <PropertyRef Name="duyuru_id" />
+          </Key>
+          <Property Name="duyuru_Basligi" Type="String" Nullable="false" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="duyuru_Metin" Type="String" Nullable="false" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="duyuru_Resim" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="duyuru_yayinTarihi" Type="DateTime" Precision="3" />
+          <Property Name="duyuru_bitisTarihi" Type="DateTime" Precision="3" />
+          <Property Name="duyuru_sahibiTc" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="duyuru_sahibiAdSoyad" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="duyuru_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DuyuruBasvuruView">
+          <Key>
+            <PropertyRef Name="duyuruBasvuru_id" />
+            <PropertyRef Name="duyuru_id" />
+          </Key>
+          <Property Name="duyuruBasvuru_id" Type="Int32" Nullable="false" />
+          <Property Name="duyuru_id" Type="Int32" Nullable="false" />
+          <Property Name="uye_tc" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="uye_AdSoyad" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="DuyuruKapsamView">
+          <Key>
+            <PropertyRef Name="duyuruKapsam_id" />
+            <PropertyRef Name="duyuru_id" />
+            <PropertyRef Name="calismaAlani_id" />
+          </Key>
+          <Property Name="duyuruKapsam_id" Type="Int32" Nullable="false" />
+          <Property Name="duyuru_id" Type="Int32" Nullable="false" />
+          <Property Name="calismaAlani_id" Type="Int32" Nullable="false" />
+          <Property Name="calismaAlani_adi" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="bolum_adi" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="fakulte_adi" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MezunTakipDbModelStoreContainer" CdmEntityContainer="MezunTakipDbEntities">
+          <EntitySetMapping Name="C__MigrationHistory">
+            <EntityTypeMapping TypeName="MezunTakipDbModel.C__MigrationHistory">
+              <MappingFragment StoreEntitySet="__MigrationHistory">
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+                <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bolumlers">
+            <EntityTypeMapping TypeName="MezunTakipDbModel.Bolumlers">
+              <MappingFragment StoreEntitySet="Bolumlers">
+                <ScalarProperty Name="bolum_id" ColumnName="bolum_id" />
+                <ScalarProperty Name="bolum_adi" ColumnName="bolum_adi" />
+                <ScalarProperty Name="bolum_kodu" ColumnName="bolum_kodu" />
+                <ScalarProperty Name="bolum_FakulteId" ColumnName="bolum_FakulteId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CalismaAlanlaris">
+            <EntityTypeMapping TypeName="MezunTakipDbModel.CalismaAlanlaris">
+              <MappingFragment StoreEntitySet="CalismaAlanlaris">
+                <ScalarProperty Name="calismaAlani_id" ColumnName="calismaAlani_id" />
+                <ScalarProperty Name="calismaAlani_adi" ColumnName="calismaAlani_adi" />
+                <ScalarProperty Name="bolum_Id" ColumnName="bolum_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DuyuruBasvurus">
+            <EntityTypeMapping TypeName="MezunTakipDbModel.DuyuruBasvurus">
+              <MappingFragment StoreEntitySet="DuyuruBasvurus">
+                <ScalarProperty Name="duyuruBasvuru_durum" ColumnName="duyuruBasvuru_durum" />
+                <ScalarProperty Name="duyuruBasvuru_id" ColumnName="duyuruBasvuru_id" />
+                <ScalarProperty Name="duyuru_id" ColumnName="duyuru_id" />
+                <ScalarProperty Name="uye_tc" ColumnName="uye_tc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DuyuruKapsamis">
+            <EntityTypeMapping TypeName="MezunTakipDbModel.DuyuruKapsamis">
+              <MappingFragment StoreEntitySet="DuyuruKapsamis">
+                <ScalarProperty Name="duyuruKapsam_id" ColumnName="duyuruKapsam_id" />
+                <ScalarProperty Name="duyuru_id" ColumnName="duyuru_id" />
+                <ScalarProperty Name="calismaAlani_id" ColumnName="calismaAlani_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Duyurulars">
+            <EntityTypeMapping TypeName="MezunTakipDbModel.Duyurulars">
+              <MappingFragment StoreEntitySet="Duyurulars">
+                <ScalarProperty Name="duyuru_id" ColumnName="duyuru_id" />
+                <ScalarProperty Name="duyuru_Basligi" ColumnName="duyuru_Basligi" />
+                <ScalarProperty Name="duyuru_Metin" ColumnName="duyuru_Metin" />
+                <ScalarProperty Name="duyuru_Resim" ColumnName="duyuru_Resim" />
+                <ScalarProperty Name="duyuru_yayinTarihi" ColumnName="duyuru_yayinTarihi" />
+                <ScalarProperty Name="duyuru_bitisTarihi" ColumnName="duyuru_bitisTarihi" />
+                <ScalarProperty Name="duyuru_sahibiTc" ColumnName="duyuru_sahibiTc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fakultelers">
+            <EntityTypeMapping TypeName="MezunTakipDbModel.Fakultelers">
+              <MappingFragment StoreEntitySet="Fakultelers">
+                <ScalarProperty Name="fakulte_id" ColumnName="fakulte_id" />
+                <ScalarProperty Name="fakulte_adi" ColumnName="fakulte_adi" />
+                <ScalarProperty Name="fakulte_kodu" ColumnName="fakulte_kodu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ilcelers">
+            <EntityTypeMapping TypeName="MezunTakipDbModel.Ilcelers">
+              <MappingFragment StoreEntitySet="Ilcelers">
+                <ScalarProperty Name="ilce_id" ColumnName="ilce_id" />
+                <ScalarProperty Name="ilce_adi" ColumnName="ilce_adi" />
+                <ScalarProperty Name="ilce_SehirId" ColumnName="ilce_SehirId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OgrenimDurumlaris">
+            <EntityTypeMapping TypeName="MezunTakipDbModel.OgrenimDurumlaris">
+              <MappingFragment StoreEntitySet="OgrenimDurumlaris">
+                <ScalarProperty Name="ogrenimD_id" ColumnName="ogrenimD_id" />
+                <ScalarProperty Name="ogrenimD_tanim" ColumnName="ogrenimD_tanim" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sehirlers">
+            <EntityTypeMapping TypeName="MezunTakipDbModel.Sehirlers">
+              <MappingFragment StoreEntitySet="Sehirlers">
+                <ScalarProperty Name="sehir_id" ColumnName="sehir_id" />
+                <ScalarProperty Name="sehir_adi" ColumnName="sehir_adi" />
+                <ScalarProperty Name="sehir_kodu" ColumnName="sehir_kodu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SirketAdres">
+            <EntityTypeMapping TypeName="MezunTakipDbModel.SirketAdres">
+              <MappingFragment StoreEntitySet="SirketAdres">
+                <ScalarProperty Name="sirketAdres_id" ColumnName="sirketAdres_id" />
+                <ScalarProperty Name="sirket_adres" ColumnName="sirket_adres" />
+                <ScalarProperty Name="sirket_Id" ColumnName="sirket_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sirketlers">
+            <EntityTypeMapping TypeName="MezunTakipDbModel.Sirketlers">
+              <MappingFragment StoreEntitySet="Sirketlers">
+                <ScalarProperty Name="sirket_id" ColumnName="sirket_id" />
+                <ScalarProperty Name="sirket_adi" ColumnName="sirket_adi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SirketTels">
+            <EntityTypeMapping TypeName="MezunTakipDbModel.SirketTels">
+              <MappingFragment StoreEntitySet="SirketTels">
+                <ScalarProperty Name="sirketTel_id" ColumnName="sirketTel_id" />
+                <ScalarProperty Name="sirket_tel" ColumnName="sirket_tel" />
+                <ScalarProperty Name="sirket_Id" ColumnName="sirket_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SirketWebs">
+            <EntityTypeMapping TypeName="MezunTakipDbModel.SirketWebs">
+              <MappingFragment StoreEntitySet="SirketWebs">
+                <ScalarProperty Name="sirketWeb_id" ColumnName="sirketWeb_id" />
+                <ScalarProperty Name="sirket_web" ColumnName="sirket_web" />
+                <ScalarProperty Name="sirket_Id" ColumnName="sirket_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UyeAdres">
+            <EntityTypeMapping TypeName="MezunTakipDbModel.UyeAdres">
+              <MappingFragment StoreEntitySet="UyeAdres">
+                <ScalarProperty Name="uyeAdres_id" ColumnName="uyeAdres_id" />
+                <ScalarProperty Name="uye_adres" ColumnName="uye_adres" />
+                <ScalarProperty Name="uye_tc" ColumnName="uye_tc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UyeBolums">
+            <EntityTypeMapping TypeName="MezunTakipDbModel.UyeBolums">
+              <MappingFragment StoreEntitySet="UyeBolums">
+                <ScalarProperty Name="uyeBolum_id" ColumnName="uyeBolum_id" />
+                <ScalarProperty Name="bolum_id" ColumnName="bolum_id" />
+                <ScalarProperty Name="uye_tc" ColumnName="uye_tc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UyeCalismaAlanis">
+            <EntityTypeMapping TypeName="MezunTakipDbModel.UyeCalismaAlanis">
+              <MappingFragment StoreEntitySet="UyeCalismaAlanis">
+                <ScalarProperty Name="uyeCalismaAlani_id" ColumnName="uyeCalismaAlani_id" />
+                <ScalarProperty Name="calismaAlani_id" ColumnName="calismaAlani_id" />
+                <ScalarProperty Name="uye_tc" ColumnName="uye_tc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Uyelers">
+            <EntityTypeMapping TypeName="MezunTakipDbModel.Uyelers">
+              <MappingFragment StoreEntitySet="Uyelers">
+                <ScalarProperty Name="uye_tc" ColumnName="uye_tc" />
+                <ScalarProperty Name="uye_id" ColumnName="uye_id" />
+                <ScalarProperty Name="uye_ad" ColumnName="uye_ad" />
+                <ScalarProperty Name="uye_soyad" ColumnName="uye_soyad" />
+                <ScalarProperty Name="uye_sifre" ColumnName="uye_sifre" />
+                <ScalarProperty Name="uye_dogumTarihi" ColumnName="uye_dogumTarihi" />
+                <ScalarProperty Name="uye_cinsiyet" ColumnName="uye_cinsiyet" />
+                <ScalarProperty Name="uye_askerlikDurumu" ColumnName="uye_askerlikDurumu" />
+                <ScalarProperty Name="uye_foto" ColumnName="uye_foto" />
+                <ScalarProperty Name="uye_dogumYeri_id" ColumnName="uye_dogumYeri_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UyeMails">
+            <EntityTypeMapping TypeName="MezunTakipDbModel.UyeMails">
+              <MappingFragment StoreEntitySet="UyeMails">
+                <ScalarProperty Name="uyeMail_id" ColumnName="uyeMail_id" />
+                <ScalarProperty Name="uyeMail_adres" ColumnName="uyeMail_adres" />
+                <ScalarProperty Name="uye_tc" ColumnName="uye_tc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UyeOgrenimDurumus">
+            <EntityTypeMapping TypeName="MezunTakipDbModel.UyeOgrenimDurumus">
+              <MappingFragment StoreEntitySet="UyeOgrenimDurumus">
+                <ScalarProperty Name="uyeOgrenimD_id" ColumnName="uyeOgrenimD_id" />
+                <ScalarProperty Name="ogrenimD_durum" ColumnName="ogrenimD_durum" />
+                <ScalarProperty Name="ogrenimD_id" ColumnName="ogrenimD_id" />
+                <ScalarProperty Name="uye_tc" ColumnName="uye_tc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UyeSirkets">
+            <EntityTypeMapping TypeName="MezunTakipDbModel.UyeSirkets">
+              <MappingFragment StoreEntitySet="UyeSirkets">
+                <ScalarProperty Name="uyeSirket_id" ColumnName="uyeSirket_id" />
+                <ScalarProperty Name="uyeSirket_durum" ColumnName="uyeSirket_durum" />
+                <ScalarProperty Name="sirket_id" ColumnName="sirket_id" />
+                <ScalarProperty Name="uye_tc" ColumnName="uye_tc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UyeTels">
+            <EntityTypeMapping TypeName="MezunTakipDbModel.UyeTels">
+              <MappingFragment StoreEntitySet="UyeTels">
+                <ScalarProperty Name="uyeTel_id" ColumnName="uyeTel_id" />
+                <ScalarProperty Name="uye_tel" ColumnName="uye_tel" />
+                <ScalarProperty Name="uye_tc" ColumnName="uye_tc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UyeBolumView">
+            <EntityTypeMapping TypeName="MezunTakipDbModel.UyeBolumView">
+              <MappingFragment StoreEntitySet="UyeBolumView">
+                <ScalarProperty Name="uye_tc" ColumnName="uye_tc" />
+                <ScalarProperty Name="fakulte_adi" ColumnName="fakulte_adi" />
+                <ScalarProperty Name="bolum_adi" ColumnName="bolum_adi" />
+                <ScalarProperty Name="uyeBolum_id" ColumnName="uyeBolum_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UyeCalismaAlaniView">
+            <EntityTypeMapping TypeName="MezunTakipDbModel.UyeCalismaAlaniView">
+              <MappingFragment StoreEntitySet="UyeCalismaAlaniView">
+                <ScalarProperty Name="uye_tc" ColumnName="uye_tc" />
+                <ScalarProperty Name="fakulte_adi" ColumnName="fakulte_adi" />
+                <ScalarProperty Name="bolum_adi" ColumnName="bolum_adi" />
+                <ScalarProperty Name="calismaAlani_adi" ColumnName="calismaAlani_adi" />
+                <ScalarProperty Name="uyeCalismaAlani_id" ColumnName="uyeCalismaAlani_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UyeSirketView">
+            <EntityTypeMapping TypeName="MezunTakipDbModel.UyeSirketView">
+              <MappingFragment StoreEntitySet="UyeSirketView">
+                <ScalarProperty Name="uye_tc" ColumnName="uye_tc" />
+                <ScalarProperty Name="sirket_web" ColumnName="sirket_web" />
+                <ScalarProperty Name="sirket_tel" ColumnName="sirket_tel" />
+                <ScalarProperty Name="sirket_adres" ColumnName="sirket_adres" />
+                <ScalarProperty Name="sirket_adi" ColumnName="sirket_adi" />
+                <ScalarProperty Name="uyeSirket_durum" ColumnName="uyeSirket_durum" />
+                <ScalarProperty Name="uyeSirket_id" ColumnName="uyeSirket_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DuyurularView">
+            <EntityTypeMapping TypeName="MezunTakipDbModel.DuyurularView">
+              <MappingFragment StoreEntitySet="DuyurularView">
+                <ScalarProperty Name="duyuru_id" ColumnName="duyuru_id" />
+                <ScalarProperty Name="duyuru_sahibiAdSoyad" ColumnName="duyuru_sahibiAdSoyad" />
+                <ScalarProperty Name="duyuru_sahibiTc" ColumnName="duyuru_sahibiTc" />
+                <ScalarProperty Name="duyuru_bitisTarihi" ColumnName="duyuru_bitisTarihi" />
+                <ScalarProperty Name="duyuru_yayinTarihi" ColumnName="duyuru_yayinTarihi" />
+                <ScalarProperty Name="duyuru_Resim" ColumnName="duyuru_Resim" />
+                <ScalarProperty Name="duyuru_Metin" ColumnName="duyuru_Metin" />
+                <ScalarProperty Name="duyuru_Basligi" ColumnName="duyuru_Basligi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DuyuruBasvuruView">
+            <EntityTypeMapping TypeName="MezunTakipDbModel.DuyuruBasvuruView">
+              <MappingFragment StoreEntitySet="DuyuruBasvuruView">
+                <ScalarProperty Name="uye_AdSoyad" ColumnName="uye_AdSoyad" />
+                <ScalarProperty Name="uye_tc" ColumnName="uye_tc" />
+                <ScalarProperty Name="duyuru_id" ColumnName="duyuru_id" />
+                <ScalarProperty Name="duyuruBasvuru_id" ColumnName="duyuruBasvuru_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DuyuruKapsamView">
+            <EntityTypeMapping TypeName="MezunTakipDbModel.DuyuruKapsamView">
+              <MappingFragment StoreEntitySet="DuyuruKapsamView">
+                <ScalarProperty Name="fakulte_adi" ColumnName="fakulte_adi" />
+                <ScalarProperty Name="bolum_adi" ColumnName="bolum_adi" />
+                <ScalarProperty Name="calismaAlani_adi" ColumnName="calismaAlani_adi" />
+                <ScalarProperty Name="calismaAlani_id" ColumnName="calismaAlani_id" />
+                <ScalarProperty Name="duyuru_id" ColumnName="duyuru_id" />
+                <ScalarProperty Name="duyuruKapsam_id" ColumnName="duyuruKapsam_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

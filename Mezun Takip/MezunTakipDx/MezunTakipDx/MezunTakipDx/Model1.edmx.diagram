@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9038bc3844c94b1581dfdff869b20964" Name="Diagram1">
+        <EntityTypeShape EntityType="MezunTakipDbModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MezunTakipDbModel.Bolumlers" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MezunTakipDbModel.CalismaAlanlaris" Width="1.5" PointX="5.25" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MezunTakipDbModel.DuyuruBasvurus" Width="1.5" PointX="9.75" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MezunTakipDbModel.DuyuruKapsamis" Width="1.5" PointX="9.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MezunTakipDbModel.Duyurulars" Width="1.5" PointX="7.5" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MezunTakipDbModel.Fakultelers" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MezunTakipDbModel.Ilcelers" Width="1.5" PointX="3" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MezunTakipDbModel.OgrenimDurumlaris" Width="1.5" PointX="5.25" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MezunTakipDbModel.Sehirlers" Width="1.5" PointX="0.75" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MezunTakipDbModel.SirketAdres" Width="1.5" PointX="12.5" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MezunTakipDbModel.Sirketlers" Width="1.5" PointX="10.25" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MezunTakipDbModel.SirketTels" Width="1.5" PointX="12.5" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MezunTakipDbModel.SirketWebs" Width="1.5" PointX="12.5" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="MezunTakipDbModel.UyeAdres" Width="1.5" PointX="7.5" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MezunTakipDbModel.UyeBolums" Width="1.5" PointX="10.5" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MezunTakipDbModel.UyeCalismaAlanis" Width="1.5" PointX="7.5" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MezunTakipDbModel.Uyelers" Width="1.5" PointX="5.25" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MezunTakipDbModel.UyeMails" Width="1.5" PointX="7.5" PointY="23.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MezunTakipDbModel.UyeOgrenimDurumus" Width="1.5" PointX="7.5" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MezunTakipDbModel.UyeSirkets" Width="1.5" PointX="12.5" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MezunTakipDbModel.UyeTels" Width="1.5" PointX="7.5" PointY="31.875" IsExpanded="true" />
+        <AssociationConnector Association="MezunTakipDbModel.FK_dbo_Bolumlers_dbo_Fakultelers_bolum_FakulteId" ManuallyRouted="false" />
+        <AssociationConnector Association="MezunTakipDbModel.FK_dbo_CalismaAlanlaris_dbo_Bolumlers_bolum_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="MezunTakipDbModel.FK_dbo_UyeBolums_dbo_Bolumlers_bolum_id" ManuallyRouted="false" />
+        <AssociationConnector Association="MezunTakipDbModel.FK_dbo_DuyuruKapsamis_dbo_CalismaAlanlaris_calismaAlani_id" ManuallyRouted="false" />
+        <AssociationConnector Association="MezunTakipDbModel.FK_dbo_UyeCalismaAlanis_dbo_CalismaAlanlaris_calismaAlani_id" ManuallyRouted="false" />
+        <AssociationConnector Association="MezunTakipDbModel.FK_dbo_DuyuruBasvurus_dbo_Duyurulars_duyuru_id" ManuallyRouted="false" />
+        <AssociationConnector Association="MezunTakipDbModel.FK_dbo_DuyuruBasvurus_dbo_Uyelers_uye_tc" ManuallyRouted="false" />
+        <AssociationConnector Association="MezunTakipDbModel.FK_dbo_DuyuruKapsamis_dbo_Duyurulars_duyuru_id" ManuallyRouted="false" />
+        <AssociationConnector Association="MezunTakipDbModel.FK_dbo_Duyurulars_dbo_Uyelers_duyuru_sahibiTc" ManuallyRouted="false" />
+        <AssociationConnector Association="MezunTakipDbModel.FK_dbo_Ilcelers_dbo_Sehirlers_ilce_SehirId" ManuallyRouted="false" />
+        <AssociationConnector Association="MezunTakipDbModel.FK_dbo_Uyelers_dbo_Ilcelers_uye_dogumYeri_id" ManuallyRouted="false" />
+        <AssociationConnector Association="MezunTakipDbModel.FK_dbo_UyeOgrenimDurumus_dbo_OgrenimDurumlaris_ogrenimD_id" ManuallyRouted="false" />
+        <AssociationConnector Association="MezunTakipDbModel.FK_dbo_SirketAdres_dbo_Sirketlers_sirket_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="MezunTakipDbModel.FK_dbo_SirketTels_dbo_Sirketlers_sirket_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="MezunTakipDbModel.FK_dbo_SirketWebs_dbo_Sirketlers_sirket_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="MezunTakipDbModel.FK_dbo_UyeSirkets_dbo_Sirketlers_sirket_id" ManuallyRouted="false" />
+        <AssociationConnector Association="MezunTakipDbModel.FK_dbo_UyeAdres_dbo_Uyelers_uye_tc" ManuallyRouted="false" />
+        <AssociationConnector Association="MezunTakipDbModel.FK_dbo_UyeBolums_dbo_Uyelers_uye_tc" ManuallyRouted="false" />
+        <AssociationConnector Association="MezunTakipDbModel.FK_dbo_UyeCalismaAlanis_dbo_Uyelers_uye_tc" ManuallyRouted="false" />
+        <AssociationConnector Association="MezunTakipDbModel.FK_dbo_UyeMails_dbo_Uyelers_uye_tc" ManuallyRouted="false" />
+        <AssociationConnector Association="MezunTakipDbModel.FK_dbo_UyeOgrenimDurumus_dbo_Uyelers_uye_tc" ManuallyRouted="false" />
+        <AssociationConnector Association="MezunTakipDbModel.FK_dbo_UyeSirkets_dbo_Uyelers_uye_tc" ManuallyRouted="false" />
+        <AssociationConnector Association="MezunTakipDbModel.FK_dbo_UyeTels_dbo_Uyelers_uye_tc" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="MezunTakipDbModel.UyeBolumView" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="MezunTakipDbModel.UyeCalismaAlaniView" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="MezunTakipDbModel.UyeSirketView" Width="1.5" PointX="4.75" PointY="4.75" />
+        <EntityTypeShape EntityType="MezunTakipDbModel.DuyurularView" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="MezunTakipDbModel.DuyuruBasvuruView" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="MezunTakipDbModel.DuyuruKapsamView" Width="1.5" PointX="7.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

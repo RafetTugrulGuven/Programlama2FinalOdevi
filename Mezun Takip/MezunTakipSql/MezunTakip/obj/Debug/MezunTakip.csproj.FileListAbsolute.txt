@@ -1,0 +1,13 @@
+D:\ProjeDosyalari\VisialStudio Proje\MezunTakip\MezunTakip\bin\Debug\MezunTakip.exe.config
+D:\ProjeDosyalari\VisialStudio Proje\MezunTakip\MezunTakip\bin\Debug\MezunTakip.exe
+D:\ProjeDosyalari\VisialStudio Proje\MezunTakip\MezunTakip\bin\Debug\MezunTakip.pdb
+D:\ProjeDosyalari\VisialStudio Proje\MezunTakip\MezunTakip\obj\Debug\MezunTakip.csprojResolveAssemblyReference.cache
+D:\ProjeDosyalari\VisialStudio Proje\MezunTakip\MezunTakip\obj\Debug\MezunTakip.exe
+D:\ProjeDosyalari\VisialStudio Proje\MezunTakip\MezunTakip\obj\Debug\MezunTakip.pdb
+E:\Projeler\Mezun Takip\MezunTakip\MezunTakip\obj\Debug\MezunTakip.csprojResolveAssemblyReference.cache
+E:\Projeler\Mezun Takip\MezunTakip\MezunTakip\obj\Debug\MezunTakip.exe
+E:\Projeler\Mezun Takip\MezunTakip\MezunTakip\obj\Debug\MezunTakip.pdb
+C:\Users\rafet\Desktop\Programlama2FinalOdev-master\Mezun Takip\MezunTakipSql\MezunTakip\obj\Debug\MezunTakip.csproj.AssemblyReference.cache
+C:\Users\rafet\Desktop\Programlama2FinalOdev-master\Mezun Takip\MezunTakipSql\MezunTakip\obj\Debug\MezunTakip.csproj.SuggestedBindingRedirects.cache
+C:\Users\rafet\Desktop\Programlama2FinalOdev-master\Mezun Takip\MezunTakipSql\MezunTakip\obj\Debug\MezunTakip.csproj.CoreCompileInputs.cache
+C:\Users\rafet\Desktop\Programlama2FinalOdev-master\Mezun Takip\MezunTakipSql\MezunTakip\obj\Debug\MezunTakip.pdb

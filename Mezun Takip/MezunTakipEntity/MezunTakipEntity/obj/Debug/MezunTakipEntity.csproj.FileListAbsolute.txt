@@ -1,0 +1,27 @@
+C:\Users\AsusH\Documents\Visual Studio 2017\Projects\Mezun Takip\MezunTakipEntity\MezunTakipEntity\bin\Debug\MezunTakipEntity.exe.config
+C:\Users\AsusH\Documents\Visual Studio 2017\Projects\Mezun Takip\MezunTakipEntity\MezunTakipEntity\bin\Debug\MezunTakipEntity.exe
+C:\Users\AsusH\Documents\Visual Studio 2017\Projects\Mezun Takip\MezunTakipEntity\MezunTakipEntity\bin\Debug\MezunTakipEntity.pdb
+C:\Users\AsusH\Documents\Visual Studio 2017\Projects\Mezun Takip\MezunTakipEntity\MezunTakipEntity\bin\Debug\EntityFramework.dll
+C:\Users\AsusH\Documents\Visual Studio 2017\Projects\Mezun Takip\MezunTakipEntity\MezunTakipEntity\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\AsusH\Documents\Visual Studio 2017\Projects\Mezun Takip\MezunTakipEntity\MezunTakipEntity\bin\Debug\EntityFramework.xml
+C:\Users\AsusH\Documents\Visual Studio 2017\Projects\Mezun Takip\MezunTakipEntity\MezunTakipEntity\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\AsusH\Documents\Visual Studio 2017\Projects\Mezun Takip\MezunTakipEntity\MezunTakipEntity\obj\Debug\MezunTakipEntity.csprojResolveAssemblyReference.cache
+C:\Users\AsusH\Documents\Visual Studio 2017\Projects\Mezun Takip\MezunTakipEntity\MezunTakipEntity\obj\Debug\MezunTakipEntity.exe
+C:\Users\AsusH\Documents\Visual Studio 2017\Projects\Mezun Takip\MezunTakipEntity\MezunTakipEntity\obj\Debug\MezunTakipEntity.pdb
+C:\Users\AsusH\Documents\Visual Studio 2017\Projects\Mezun Takip\MezunTakipEntity\MezunTakipEntity\obj\Debug\MezunTakipEntity.Migrations.s.resources
+C:\Users\AsusH\Documents\Visual Studio 2017\Projects\Mezun Takip\MezunTakipEntity\MezunTakipEntity\obj\Debug\MezunTakipEntity.csproj.GenerateResource.Cache
+C:\Users\rafet\Desktop\Programlama2FinalOdev-master\Mezun Takip\MezunTakipEntity\MezunTakipEntity\bin\Debug\MezunTakipEntity.exe.config
+C:\Users\rafet\Desktop\Programlama2FinalOdev-master\Mezun Takip\MezunTakipEntity\MezunTakipEntity\bin\Debug\MezunTakipEntity.exe
+C:\Users\rafet\Desktop\Programlama2FinalOdev-master\Mezun Takip\MezunTakipEntity\MezunTakipEntity\bin\Debug\MezunTakipEntity.pdb
+C:\Users\rafet\Desktop\Programlama2FinalOdev-master\Mezun Takip\MezunTakipEntity\MezunTakipEntity\bin\Debug\EntityFramework.dll
+C:\Users\rafet\Desktop\Programlama2FinalOdev-master\Mezun Takip\MezunTakipEntity\MezunTakipEntity\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\rafet\Desktop\Programlama2FinalOdev-master\Mezun Takip\MezunTakipEntity\MezunTakipEntity\bin\Debug\EntityFramework.xml
+C:\Users\rafet\Desktop\Programlama2FinalOdev-master\Mezun Takip\MezunTakipEntity\MezunTakipEntity\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\rafet\Desktop\Programlama2FinalOdev-master\Mezun Takip\MezunTakipEntity\MezunTakipEntity\obj\Debug\MezunTakipEntity.csproj.AssemblyReference.cache
+C:\Users\rafet\Desktop\Programlama2FinalOdev-master\Mezun Takip\MezunTakipEntity\MezunTakipEntity\obj\Debug\MezunTakipEntity.csproj.SuggestedBindingRedirects.cache
+C:\Users\rafet\Desktop\Programlama2FinalOdev-master\Mezun Takip\MezunTakipEntity\MezunTakipEntity\obj\Debug\MezunTakipEntity.Migrations.s.resources
+C:\Users\rafet\Desktop\Programlama2FinalOdev-master\Mezun Takip\MezunTakipEntity\MezunTakipEntity\obj\Debug\MezunTakipEntity.csproj.GenerateResource.cache
+C:\Users\rafet\Desktop\Programlama2FinalOdev-master\Mezun Takip\MezunTakipEntity\MezunTakipEntity\obj\Debug\MezunTakipEntity.csproj.CoreCompileInputs.cache
+C:\Users\rafet\Desktop\Programlama2FinalOdev-master\Mezun Takip\MezunTakipEntity\MezunTakipEntity\obj\Debug\MezunTakipEntity.csproj.CopyComplete
+C:\Users\rafet\Desktop\Programlama2FinalOdev-master\Mezun Takip\MezunTakipEntity\MezunTakipEntity\obj\Debug\MezunTakipEntity.exe
+C:\Users\rafet\Desktop\Programlama2FinalOdev-master\Mezun Takip\MezunTakipEntity\MezunTakipEntity\obj\Debug\MezunTakipEntity.pdb
